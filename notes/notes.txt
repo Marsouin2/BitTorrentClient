@@ -1,0 +1,20 @@
+sites pour aider (tutos, explications...)
+
+- https://allenkim67.github.io/programming/2016/05/04/how-to-make-your-own-bittorrent-client.html
+
+- explications visuelles des informations content un .torrent : https://www.morehawes.co.uk/the-bittorrent-protocol
+
+- librairie libtorrent : http://libtorrent.org/
+
+- all about bittorrent : http://www.bittorrent.org/beps/bep_0003.html
+
+- TCP > UDP car on peux checker si les donnees sont bien envoyes ou si il y a des pertes
+
+
+Fonctionnement client BitTorrent :
+1- on telecharge un .torrent
+2- on envoie une requete au tracker comme quoi on veux dl le fichier.
+3- Le tracker nous envoie une liste de "peers" (le tracker nous envoie l'ip des users qui
+possede les fichier qu'il nous faut)
+4- Avec ces ip, on se connecte a eux et on telecharge. (on leur dit les pieces du fichier
+que l'on a et il nous disent lesquelles il nous manque)
