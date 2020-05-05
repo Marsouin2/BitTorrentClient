@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/manage_torrent_file.hpp -I/network.hpp -I/patron_manage_torrent_file.hpp -I/patron_network.hpp -I/home/marsouin/Project/BitTorrentClient/src/my_own_exceptions.hpp 
 

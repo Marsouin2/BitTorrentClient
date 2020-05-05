@@ -7,15 +7,15 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
-#set(NETWORKING_HEADER src/header/Networking)
-#set(SOUND_MANAGER_HEADER src/header/SoundManager)
+#set(NETWORKING_HEADER src/Networking)
+#set(TORRENT_MANAGER_HEADER src/TorrentManager)
 
-#set(HEADER_FILES ${NETWORKING_HEADER}/client.hpp ${NETWORKING_HEADER}/server.hpp ${SOUND_MANAGER_HEADER}/record.hpp ${SOUND_MANAGER_HEADER}/to_listen.hpp)
+set(HEADER_FILES ${TORRENT_MANAGER_HEADER}/manage_torrent_file.hpp ${NETWORKING_HEADER}/network.hpp ${TORRENT_MANAGER_HEADER}/patron_manage_torrent_file.hpp ${NETWORKING_HEADER}/patron_network.hpp src/my_own_exceptions.hpp)
 set(SOURCES src/main.cpp)
 
 #add_library(mylib ${SOURCES} ${HEADER_FILES})
 add_executable(torrent_client ${SOURCES})
-#target_include_directories(torrent_client PRIVATE ${HEADER_FILES})
+target_include_directories(torrent_client PRIVATE ${HEADER_FILES})
 
 
 #target_link_libraries(my_skype ${CMAKE_SOURCE_DIR}/lib/libportaudio.a)

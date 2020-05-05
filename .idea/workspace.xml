@@ -13,6 +13,17 @@
   <component name="ChangeListManager">
     <list default="true" id="8c2eea18-80e1-4a48-a845-df849e867420" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/torrent_client" beforeDir="false" afterPath="$PROJECT_DIR$/bin/torrent_client" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/#tempo_torrent.torrent#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +33,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -55,11 +65,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588637493250</updated>
-      <workItem from="1588637495186" duration="3837000" />
+      <workItem from="1588637495186" duration="4040000" />
+      <workItem from="1588689876593" duration="4946000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="418" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588693999766">
+      <screen x="0" y="33" width="1920" height="1047" />
+    </state>
+    <state x="418" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1588693999766" />
   </component>
 </project>
