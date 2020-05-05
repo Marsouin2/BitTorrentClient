@@ -7,11 +7,11 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
-#set(NETWORKING_HEADER src/Networking)
-#set(TORRENT_MANAGER_HEADER src/TorrentManager)
+set(NETWORKING_HEADER src/Networking)
+set(TORRENT_MANAGER_HEADER src/TorrentManager)
 
 set(HEADER_FILES ${TORRENT_MANAGER_HEADER}/manage_torrent_file.hpp ${NETWORKING_HEADER}/network.hpp ${TORRENT_MANAGER_HEADER}/patron_manage_torrent_file.hpp ${NETWORKING_HEADER}/patron_network.hpp src/my_own_exceptions.hpp)
-set(SOURCES src/main.cpp)
+set(SOURCES src/main.cpp ${TORRENT_MANAGER_HEADER}/manage_torrent_file.cpp)
 
 #add_library(mylib ${SOURCES} ${HEADER_FILES})
 add_executable(torrent_client ${SOURCES})

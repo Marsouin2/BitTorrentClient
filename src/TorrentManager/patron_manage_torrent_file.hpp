@@ -1,3 +1,7 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
 class               PatronManageTorrentFile
 {
 private:
@@ -5,6 +9,6 @@ private:
 public:
     PatronManageTorrentFile(){};
     virtual ~PatronManageTorrentFile(){};
-    virtual void    OpenAndRead() = 0;
+    virtual int     OpenAndRead() = 0; // int vraiment necessaire ? sachant qu'on try catch si l'ouverture du fichier = error
     virtual void    GetBencode() = 0;
 };

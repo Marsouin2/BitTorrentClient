@@ -5,7 +5,8 @@
 int                         main(int argc, char **argv) {
     try {
         if (argc != 2) { throw(MyOwnExceptions("Please specify a torrent file : ./torrent_client <file.torrent>")); }
-        ManageTorrentFile torrent_manager(argv[1]);
+        const std::string tempo_arg = argv[1];
+        ManageTorrentFile torrent_manager(tempo_arg);
     }
     catch (const MyOwnExceptions& ex) {
         std::cerr << ex.GetErrorMessage() << std::endl;

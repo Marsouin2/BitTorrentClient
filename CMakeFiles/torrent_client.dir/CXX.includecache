@@ -6,18 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.cpp
+manage_torrent_file.hpp
+/home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.hpp
+../my_own_exceptions.hpp
+/home/marsouin/Project/BitTorrentClient/src/my_own_exceptions.hpp
+
 /home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.hpp
 patron_manage_torrent_file.hpp
 /home/marsouin/Project/BitTorrentClient/src/TorrentManager/patron_manage_torrent_file.hpp
 
 /home/marsouin/Project/BitTorrentClient/src/TorrentManager/patron_manage_torrent_file.hpp
-
-/home/marsouin/Project/BitTorrentClient/src/main.cpp
-my_own_exceptions.hpp
-/home/marsouin/Project/BitTorrentClient/src/my_own_exceptions.hpp
-TorrentManager/manage_torrent_file.hpp
-/home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.hpp
 iostream
+-
+fstream
+-
+string
 -
 
 /home/marsouin/Project/BitTorrentClient/src/my_own_exceptions.hpp

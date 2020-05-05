@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/torrent_client.dir/src/main.cpp.o  -o bin/torrent_client 
+/usr/bin/c++     CMakeFiles/torrent_client.dir/src/main.cpp.o CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o  -o bin/torrent_client 

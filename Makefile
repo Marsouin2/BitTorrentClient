@@ -143,6 +143,33 @@ torrent_client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/build
 .PHONY : torrent_client/fast
 
+src/TorrentManager/manage_torrent_file.o: src/TorrentManager/manage_torrent_file.cpp.o
+
+.PHONY : src/TorrentManager/manage_torrent_file.o
+
+# target to build an object file
+src/TorrentManager/manage_torrent_file.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o
+.PHONY : src/TorrentManager/manage_torrent_file.cpp.o
+
+src/TorrentManager/manage_torrent_file.i: src/TorrentManager/manage_torrent_file.cpp.i
+
+.PHONY : src/TorrentManager/manage_torrent_file.i
+
+# target to preprocess a source file
+src/TorrentManager/manage_torrent_file.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.i
+.PHONY : src/TorrentManager/manage_torrent_file.cpp.i
+
+src/TorrentManager/manage_torrent_file.s: src/TorrentManager/manage_torrent_file.cpp.s
+
+.PHONY : src/TorrentManager/manage_torrent_file.s
+
+# target to generate assembly for a file
+src/TorrentManager/manage_torrent_file.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.s
+.PHONY : src/TorrentManager/manage_torrent_file.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... torrent_client"
+	@echo "... src/TorrentManager/manage_torrent_file.o"
+	@echo "... src/TorrentManager/manage_torrent_file.i"
+	@echo "... src/TorrentManager/manage_torrent_file.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

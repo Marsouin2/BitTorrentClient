@@ -4,12 +4,10 @@ class           ManageTorrentFile : PatronManageTorrentFile
 {
 private:
     std::string torrent_filename;
+    std::string torrent_content;
 public:
-    ManageTorrentFile(std::string torrent_file) { this->torrent_filename = torrent_file; };
-    ~ManageTorrentFile()
-    {};
-    void        OpenAndRead()
-    {};
-    void        GetBencode()
-    {};
+    ManageTorrentFile(const std::string &torrent_file);
+    ~ManageTorrentFile() {};
+    int         OpenAndRead();
+    void        GetBencode() {};
 };
