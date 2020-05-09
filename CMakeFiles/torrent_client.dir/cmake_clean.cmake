@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o"
   "CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o"
   "CMakeFiles/torrent_client.dir/src/main.cpp.o"
   "bin/torrent_client"

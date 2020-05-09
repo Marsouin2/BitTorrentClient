@@ -6,25 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.cpp
-manage_torrent_file.hpp
-/home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.hpp
-../my_own_exceptions.hpp
-/home/marsouin/Project/BitTorrentClient/src/my_own_exceptions.hpp
+/home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.cpp
+bencode_parser.hpp
+/home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.hpp
 
-/home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.hpp
-patron_manage_torrent_file.hpp
-/home/marsouin/Project/BitTorrentClient/src/TorrentManager/patron_manage_torrent_file.hpp
-
-/home/marsouin/Project/BitTorrentClient/src/TorrentManager/patron_manage_torrent_file.hpp
+/home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.hpp
 iostream
 -
-fstream
+memory
 -
 string
 -
-
-/home/marsouin/Project/BitTorrentClient/src/my_own_exceptions.hpp
-string
+regex
+-
+map
+-
+sstream
 -
 

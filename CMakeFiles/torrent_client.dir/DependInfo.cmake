@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o"
   "/home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o"
   "/home/marsouin/Project/BitTorrentClient/src/main.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/main.cpp.o"
   )
@@ -16,6 +17,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "src/TorrentManager/patron_manage_torrent_file.hpp"
   "src/Networking/patron_network.hpp"
   "src/my_own_exceptions.hpp"
+  "src/TorrentManager/bencode_parser.hpp"
   )
 
 # Targets to which this target links.

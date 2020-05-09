@@ -143,6 +143,33 @@ torrent_client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/build
 .PHONY : torrent_client/fast
 
+src/TorrentManager/bencode_parser.o: src/TorrentManager/bencode_parser.cpp.o
+
+.PHONY : src/TorrentManager/bencode_parser.o
+
+# target to build an object file
+src/TorrentManager/bencode_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o
+.PHONY : src/TorrentManager/bencode_parser.cpp.o
+
+src/TorrentManager/bencode_parser.i: src/TorrentManager/bencode_parser.cpp.i
+
+.PHONY : src/TorrentManager/bencode_parser.i
+
+# target to preprocess a source file
+src/TorrentManager/bencode_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.i
+.PHONY : src/TorrentManager/bencode_parser.cpp.i
+
+src/TorrentManager/bencode_parser.s: src/TorrentManager/bencode_parser.cpp.s
+
+.PHONY : src/TorrentManager/bencode_parser.s
+
+# target to generate assembly for a file
+src/TorrentManager/bencode_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.s
+.PHONY : src/TorrentManager/bencode_parser.cpp.s
+
 src/TorrentManager/manage_torrent_file.o: src/TorrentManager/manage_torrent_file.cpp.o
 
 .PHONY : src/TorrentManager/manage_torrent_file.o
@@ -206,6 +233,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... torrent_client"
+	@echo "... src/TorrentManager/bencode_parser.o"
+	@echo "... src/TorrentManager/bencode_parser.i"
+	@echo "... src/TorrentManager/bencode_parser.s"
 	@echo "... src/TorrentManager/manage_torrent_file.o"
 	@echo "... src/TorrentManager/manage_torrent_file.i"
 	@echo "... src/TorrentManager/manage_torrent_file.s"

@@ -24,16 +24,16 @@
       <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/torrent_client" beforeDir="false" afterPath="$PROJECT_DIR$/bin/torrent_client" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Metamorphose EP.torrent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Ride The Lightning.torrent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes/notes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TorrentManager/patron_manage_torrent_file.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/patron_manage_torrent_file.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_own_exceptions.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_own_exceptions.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1588637493250</updated>
       <workItem from="1588637495186" duration="4040000" />
-      <workItem from="1588689876593" duration="8322000" />
+      <workItem from="1588689876593" duration="15708000" />
+      <workItem from="1588779456726" duration="22973000" />
     </task>
     <servers />
   </component>
@@ -88,5 +89,9 @@
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="418" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1588693999766" />
+    <state x="623" y="264" key="search.everywhere.popup" timestamp="1588781377788">
+      <screen x="0" y="33" width="1920" height="1047" />
+    </state>
+    <state x="623" y="264" key="search.everywhere.popup/0.33.1920.1047@0.33.1920.1047" timestamp="1588781377788" />
   </component>
 </project>

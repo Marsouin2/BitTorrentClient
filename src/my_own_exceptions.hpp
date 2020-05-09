@@ -1,3 +1,6 @@
+#ifndef MY_OWN_EXCEPTIONS_HPP_
+#define MY_OWN_EXCEPTIONS_HPP_
+
 #include <string>
 
 class                   MyOwnExceptions
@@ -11,3 +14,5 @@ public:
         return(msg);
     }
 };
+
+#endif /* MY_OWN_EXCEPTIONS_HPP_ */
