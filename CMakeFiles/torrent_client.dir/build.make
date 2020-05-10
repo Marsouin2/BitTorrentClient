@@ -129,6 +129,7 @@ bin/torrent_client: CMakeFiles/torrent_client.dir/src/main.cpp.o
 bin/torrent_client: CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o
 bin/torrent_client: CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o
 bin/torrent_client: CMakeFiles/torrent_client.dir/build.make
+bin/torrent_client: lib/libbencoding.a
 bin/torrent_client: CMakeFiles/torrent_client.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable bin/torrent_client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/torrent_client.dir/link.txt --verbose=$(VERBOSE)

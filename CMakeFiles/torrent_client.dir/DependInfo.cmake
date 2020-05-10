@@ -18,6 +18,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "src/Networking/patron_network.hpp"
   "src/my_own_exceptions.hpp"
   "src/TorrentManager/bencode_parser.hpp"
+  "lib/bencoding/bencoding.h"
   )
 
 # Targets to which this target links.
