@@ -73,6 +73,7 @@ CMAKE_BINARY_DIR = /home/marsouin/Project/BitTorrentClient
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/mylib.dir/all
 all: CMakeFiles/torrent_client.dir/all
 
 .PHONY : all
@@ -83,9 +84,37 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/mylib.dir/clean
 clean: CMakeFiles/torrent_client.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/mylib.dir
+
+# All Build rule for target.
+CMakeFiles/mylib.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=1,2,3,4 "Built target mylib"
+.PHONY : CMakeFiles/mylib.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/mylib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marsouin/Project/BitTorrentClient/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mylib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marsouin/Project/BitTorrentClient/CMakeFiles 0
+.PHONY : CMakeFiles/mylib.dir/rule
+
+# Convenience name for target.
+mylib: CMakeFiles/mylib.dir/rule
+
+.PHONY : mylib
+
+# clean rule for target.
+CMakeFiles/mylib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/clean
+.PHONY : CMakeFiles/mylib.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/torrent_client.dir
@@ -94,7 +123,7 @@ clean: CMakeFiles/torrent_client.dir/clean
 CMakeFiles/torrent_client.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=1,2,3,4 "Built target torrent_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=5,6,7,8 "Built target torrent_client"
 .PHONY : CMakeFiles/torrent_client.dir/all
 
 # Build rule for subdir invocation for target.

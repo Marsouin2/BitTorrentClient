@@ -1,0 +1,1 @@
+pour compiler : c++ -I /home/marsouin/Téléchargements/boost_1_73_0 -lboost_filesystem -pthread test_client.cpp -o test

@@ -3,7 +3,8 @@ project(BitTorrentClient)
 
 set(CMAKE_CXX_STANDARD 14)
 
-#set (CMAKE_CXX_FLAGS "-lrt -lm -lasound -ljack -pthread -o")
+#set (CMAKE_CXX_FLAGS "-shared -fPIC -lrt -lm -pthread -o")
+#-lasound -ljack
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
@@ -24,7 +25,7 @@ set(HEADER_FILES
 
 set(SOURCES src/main.cpp ${TORRENT_MANAGER_HEADER}/manage_torrent_file.cpp ${TORRENT_MANAGER_HEADER}/bencode_parser.cpp)
 
-#add_library(mylib ${SOURCES} ${HEADER_FILES})
+add_library(mylib ${SOURCES} ${HEADER_FILES})
 add_executable(torrent_client ${SOURCES})
 target_include_directories(torrent_client PRIVATE ${HEADER_FILES})
 

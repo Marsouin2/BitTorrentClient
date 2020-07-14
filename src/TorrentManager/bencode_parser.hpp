@@ -10,18 +10,29 @@
 
 #include "../../lib/bencoding/bencoding.h"
 
+struct                                          TorrentDatas
+{
+    std::string                                 announce;
+    std::string                                 torrent_name;
+    int                                         torrent_length;
+
+} ;
+
 class                                           BencodeParser
 {
 private:
     std::string                                 encoded_bencode;
-    /*std::string                                 decoded_bencode;
-    std::map<std::string, std::string>          bencode_informations;
-    std::vector<std::string>                    tempo_map_stored;*/
+    TorrentDatas                                torrent_datas;
+    //std::string                                 decoded_bencode;
+    //std::map<std::string, std::string>          bencode_informations;
+    //std::vector<std::string>                    tempo_map_stored;*/
 
 public:
     BencodeParser(std::string encoded_bencode_);
     ~BencodeParser(){};
     void                                        UseBencodeParser();
+    std::string                                 GetBencodeKeyContent(std::string const&, std::string const&);
+    //std::map<std::string, std::string>          GetBencodeInformations() { return this->bencode_informations; };
     /*void                                        DeleteNumbersAndColon(); // delete the {70:} from the torrent's bencode
     void                                        BencodeToJson();
     std::string                                 GetIntegerInsideAString(int i);

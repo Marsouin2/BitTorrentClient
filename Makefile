@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named mylib
+
+# Build rule for target.
+mylib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib
+.PHONY : mylib
+
+# fast build rule for target.
+mylib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/build
+.PHONY : mylib/fast
+
+#=============================================================================
 # Target rules for targets named torrent_client
 
 # Build rule for target.
@@ -149,6 +162,7 @@ src/TorrentManager/bencode_parser.o: src/TorrentManager/bencode_parser.cpp.o
 
 # target to build an object file
 src/TorrentManager/bencode_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o
 .PHONY : src/TorrentManager/bencode_parser.cpp.o
 
@@ -158,6 +172,7 @@ src/TorrentManager/bencode_parser.i: src/TorrentManager/bencode_parser.cpp.i
 
 # target to preprocess a source file
 src/TorrentManager/bencode_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.i
 .PHONY : src/TorrentManager/bencode_parser.cpp.i
 
@@ -167,6 +182,7 @@ src/TorrentManager/bencode_parser.s: src/TorrentManager/bencode_parser.cpp.s
 
 # target to generate assembly for a file
 src/TorrentManager/bencode_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.s
 .PHONY : src/TorrentManager/bencode_parser.cpp.s
 
@@ -176,6 +192,7 @@ src/TorrentManager/manage_torrent_file.o: src/TorrentManager/manage_torrent_file
 
 # target to build an object file
 src/TorrentManager/manage_torrent_file.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o
 .PHONY : src/TorrentManager/manage_torrent_file.cpp.o
 
@@ -185,6 +202,7 @@ src/TorrentManager/manage_torrent_file.i: src/TorrentManager/manage_torrent_file
 
 # target to preprocess a source file
 src/TorrentManager/manage_torrent_file.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.i
 .PHONY : src/TorrentManager/manage_torrent_file.cpp.i
 
@@ -194,6 +212,7 @@ src/TorrentManager/manage_torrent_file.s: src/TorrentManager/manage_torrent_file
 
 # target to generate assembly for a file
 src/TorrentManager/manage_torrent_file.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.s
 .PHONY : src/TorrentManager/manage_torrent_file.cpp.s
 
@@ -203,6 +222,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/main.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
@@ -212,6 +232,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/main.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
@@ -221,6 +242,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/main.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
@@ -232,6 +254,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... mylib"
 	@echo "... torrent_client"
 	@echo "... src/TorrentManager/bencode_parser.o"
 	@echo "... src/TorrentManager/bencode_parser.i"
