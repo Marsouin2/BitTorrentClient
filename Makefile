@@ -156,6 +156,36 @@ torrent_client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/build
 .PHONY : torrent_client/fast
 
+src/BytesManipulator/bytes_manipulator.o: src/BytesManipulator/bytes_manipulator.cpp.o
+
+.PHONY : src/BytesManipulator/bytes_manipulator.o
+
+# target to build an object file
+src/BytesManipulator/bytes_manipulator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.o
+.PHONY : src/BytesManipulator/bytes_manipulator.cpp.o
+
+src/BytesManipulator/bytes_manipulator.i: src/BytesManipulator/bytes_manipulator.cpp.i
+
+.PHONY : src/BytesManipulator/bytes_manipulator.i
+
+# target to preprocess a source file
+src/BytesManipulator/bytes_manipulator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.i
+.PHONY : src/BytesManipulator/bytes_manipulator.cpp.i
+
+src/BytesManipulator/bytes_manipulator.s: src/BytesManipulator/bytes_manipulator.cpp.s
+
+.PHONY : src/BytesManipulator/bytes_manipulator.s
+
+# target to generate assembly for a file
+src/BytesManipulator/bytes_manipulator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.s
+.PHONY : src/BytesManipulator/bytes_manipulator.cpp.s
+
 src/TorrentManager/bencode_parser.o: src/TorrentManager/bencode_parser.cpp.o
 
 .PHONY : src/TorrentManager/bencode_parser.o
@@ -256,6 +286,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... mylib"
 	@echo "... torrent_client"
+	@echo "... src/BytesManipulator/bytes_manipulator.o"
+	@echo "... src/BytesManipulator/bytes_manipulator.i"
+	@echo "... src/BytesManipulator/bytes_manipulator.s"
 	@echo "... src/TorrentManager/bencode_parser.o"
 	@echo "... src/TorrentManager/bencode_parser.i"
 	@echo "... src/TorrentManager/bencode_parser.s"

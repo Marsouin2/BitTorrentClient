@@ -116,11 +116,25 @@ CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.cpp -o CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.s
 
+CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o: CMakeFiles/mylib.dir/flags.make
+CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o: src/BytesManipulator/bytes_manipulator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o -c /home/marsouin/Project/BitTorrentClient/src/BytesManipulator/bytes_manipulator.cpp
+
+CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marsouin/Project/BitTorrentClient/src/BytesManipulator/bytes_manipulator.cpp > CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.i
+
+CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marsouin/Project/BitTorrentClient/src/BytesManipulator/bytes_manipulator.cpp -o CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.s
+
 # Object files for target mylib
 mylib_OBJECTS = \
 "CMakeFiles/mylib.dir/src/main.cpp.o" \
 "CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o" \
-"CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o"
+"CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o" \
+"CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o"
 
 # External object files for target mylib
 mylib_EXTERNAL_OBJECTS =
@@ -128,9 +142,10 @@ mylib_EXTERNAL_OBJECTS =
 libmylib.a: CMakeFiles/mylib.dir/src/main.cpp.o
 libmylib.a: CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o
 libmylib.a: CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o
+libmylib.a: CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o
 libmylib.a: CMakeFiles/mylib.dir/build.make
 libmylib.a: CMakeFiles/mylib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libmylib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libmylib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/mylib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mylib.dir/link.txt --verbose=$(VERBOSE)
 

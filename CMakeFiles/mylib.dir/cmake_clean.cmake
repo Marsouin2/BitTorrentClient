@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o"
   "CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o"
   "CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o"
   "CMakeFiles/mylib.dir/src/main.cpp.o"

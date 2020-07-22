@@ -27,7 +27,9 @@ class                                           BencodeParser
 {
 private:
     std::string                                 encoded_bencode;
+    std::string                                 bencode_datas; // real bencode_datas
     TorrentDatas                                torrent_datas;
+
     //std::string                                 decoded_bencode;
     //std::map<std::string, std::string>          bencode_informations;
     //std::vector<std::string>                    tempo_map_stored;*/
@@ -38,7 +40,11 @@ public:
     void                                        UseBencodeParser();
     std::string                                 GetBencodeKeyContent(std::string const&, std::string const&);
     void                                        GetInfoHash(std::string const&);
-    void                                        GetInfoHash2();
+    //void                                        GetInfoHash2();
+    void                                        SetBencodeDatas(const std::string new_bencode_datas) { this->bencode_datas = new_bencode_datas; };
+    const std::string                           GetBencodeDatas() { return this->bencode_datas; };
+
+
     //std::map<std::string, std::string>          GetBencodeInformations() { return this->bencode_informations; };
     /*void                                        DeleteNumbersAndColon(); // delete the {70:} from the torrent's bencode
     void                                        BencodeToJson();
