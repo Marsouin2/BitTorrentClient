@@ -125,7 +125,17 @@ regex
 -
 map
 -
+algorithm
+-
 sstream
+-
+iomanip
+-
+openssl/sha.h
+-
+openssl/bio.h
+-
+openssl/evp.h
 -
 ../../lib/bencoding/bencoding.h
 /home/marsouin/Project/BitTorrentClient/lib/bencoding/bencoding.h

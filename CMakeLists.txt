@@ -3,7 +3,7 @@ project(BitTorrentClient)
 
 set(CMAKE_CXX_STANDARD 14)
 
-#set (CMAKE_CXX_FLAGS "-shared -fPIC -lrt -lm -pthread -o")
+set (CMAKE_CXX_FLAGS "-lssl -lcrypto")
 #-lasound -ljack
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")

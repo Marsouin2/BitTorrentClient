@@ -6,8 +6,13 @@
 #include <string>
 #include <regex>
 #include <map>
+#include <algorithm>
 #include <sstream>
+#include <iomanip>
 
+#include <openssl/sha.h>
+#include <openssl/bio.h>
+#include <openssl/evp.h>
 #include "../../lib/bencoding/bencoding.h"
 
 struct                                          TorrentDatas
@@ -32,6 +37,8 @@ public:
     ~BencodeParser(){};
     void                                        UseBencodeParser();
     std::string                                 GetBencodeKeyContent(std::string const&, std::string const&);
+    void                                        GetInfoHash(std::string const&);
+    void                                        GetInfoHash2();
     //std::map<std::string, std::string>          GetBencodeInformations() { return this->bencode_informations; };
     /*void                                        DeleteNumbersAndColon(); // delete the {70:} from the torrent's bencode
     void                                        BencodeToJson();
