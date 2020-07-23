@@ -19,31 +19,18 @@ const std::string                             ManageTorrentFile::GetInfoHash() {
         unsigned char obuf[20];
         int i = 0;
 
-        for (char &c : tempo_content_info_hash) {
-            p[i] = c;
-            i++;
-        }
+        for (char &c : tempo_content_info_hash)
+            p[i++] = c;
 
         p[tempo_info_hash_length] = '\0';
 
-
-        //std::cout << tempo_content_info_hash << std::endl;
-
         SHA1(p, tempo_info_hash_length, obuf);
+        char buf[SHA_DIGEST_LENGTH * 2];
 
-        std::cout << "sha1 : " << obuf << std::endl;
-
-        //std::cout << "binary : " << binary_info_hash << std::endl;
-
-        /*for (int y = 0; y != 20; y++) {
-            std::cout << "\'" << std::bitset<8>(obuf[y]).to_string() << "\'" << std::endl;
-        }*/
-
-        /*int j;
-        for (j = 0; j < 20; j++) {
-            printf("%02x ", obuf[j]);
+        for (i = 0; i < SHA_DIGEST_LENGTH; i++) {
+            sprintf((char*)&(buf[i*2]), "%02x", obuf[i]);
         }
-        printf("\n");*/
+        return buf;
     }
     return "zizi";
 }
@@ -77,6 +64,8 @@ void                        ManageTorrentFile::ConstituteFirstTorrentRequest(con
                                                                              const std::string torrent_length) { // constitute the url for the first request to the tracker
     // https://torrent.ubuntu.com/announce?info_hash=%9F%C2%0B%9E%98%EA%98%B4%A3%5Eb%23%04%1A%5E%F9N%A2x%09&peer_id=-PC0001-706887310628&uploaded=0&downloaded=0&left=2715254784&port=6889&compact=1
 
+    std::string final_request = torrent_announce + "?info_hash=" + torrent_info_hash + "&peer_id=-PC0001-706887310628&uploaded=0&downloaded=0&left=" + torrent_length + "&port=6889&compact=1";
+    std::cout << "final request : " << final_request << std::endl;
 
 }
 
@@ -91,9 +80,8 @@ void                        ManageTorrentFile::GetDecodedBencode() { // split th
     BytesManipulator        bytes_manipulator(torrent_info_hash);
 
     const std::string       final_info_hash = bytes_manipulator.GetUrlEncodeInfoHash(); // get the urlencoded info_hash
-    std::cout << "final info_hash : " << final_info_hash << std::endl;
 
-    this->ConstituteFirstTorrentRequest(torrent_announce, torrent_info_hash, torrent_length); // need /name/info_hash/length
+    this->ConstituteFirstTorrentRequest(torrent_announce, final_info_hash, torrent_length); // need /name/info_hash/length
     //const std::string       bencode_string =
 }
 

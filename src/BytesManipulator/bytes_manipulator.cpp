@@ -1,7 +1,6 @@
 #include "bytes_manipulator.hpp"
 
 BytesManipulator::BytesManipulator(std::string input_info_hash) {
-    std::cout << "test input : " << input_info_hash << std::endl;
     std::string bytes = this->HexToBytes(input_info_hash);
     this->SetUrlEncode(this->Urlencode(bytes));
 }
