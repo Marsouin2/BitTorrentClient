@@ -186,6 +186,36 @@ src/BytesManipulator/bytes_manipulator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.s
 .PHONY : src/BytesManipulator/bytes_manipulator.cpp.s
 
+src/Networking/network.o: src/Networking/network.cpp.o
+
+.PHONY : src/Networking/network.o
+
+# target to build an object file
+src/Networking/network.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/Networking/network.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o
+.PHONY : src/Networking/network.cpp.o
+
+src/Networking/network.i: src/Networking/network.cpp.i
+
+.PHONY : src/Networking/network.i
+
+# target to preprocess a source file
+src/Networking/network.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/Networking/network.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/Networking/network.cpp.i
+.PHONY : src/Networking/network.cpp.i
+
+src/Networking/network.s: src/Networking/network.cpp.s
+
+.PHONY : src/Networking/network.s
+
+# target to generate assembly for a file
+src/Networking/network.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/Networking/network.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/Networking/network.cpp.s
+.PHONY : src/Networking/network.cpp.s
+
 src/TorrentManager/bencode_parser.o: src/TorrentManager/bencode_parser.cpp.o
 
 .PHONY : src/TorrentManager/bencode_parser.o
@@ -289,6 +319,9 @@ help:
 	@echo "... src/BytesManipulator/bytes_manipulator.o"
 	@echo "... src/BytesManipulator/bytes_manipulator.i"
 	@echo "... src/BytesManipulator/bytes_manipulator.s"
+	@echo "... src/Networking/network.o"
+	@echo "... src/Networking/network.i"
+	@echo "... src/Networking/network.s"
 	@echo "... src/TorrentManager/bencode_parser.o"
 	@echo "... src/TorrentManager/bencode_parser.i"
 	@echo "... src/TorrentManager/bencode_parser.s"

@@ -3,7 +3,7 @@ project(BitTorrentClient)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set (CMAKE_CXX_FLAGS "-lssl -lcrypto")
+set (CMAKE_CXX_FLAGS "-lssl -lcrypto -lcurl")
 #-lasound -ljack
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
@@ -25,7 +25,7 @@ set(HEADER_FILES
 			${BENCODING_LIB}/bencoding.h
 )
 
-set(SOURCES src/main.cpp ${TORRENT_MANAGER_HEADER}/manage_torrent_file.cpp ${TORRENT_MANAGER_HEADER}/bencode_parser.cpp ${BYTES_MANIPULATOR}/bytes_manipulator.cpp)
+set(SOURCES src/main.cpp ${TORRENT_MANAGER_HEADER}/manage_torrent_file.cpp ${TORRENT_MANAGER_HEADER}/bencode_parser.cpp ${BYTES_MANIPULATOR}/bytes_manipulator.cpp ${NETWORKING_HEADER}/network.cpp)
 
 add_library(mylib ${SOURCES} ${HEADER_FILES})
 add_executable(torrent_client ${SOURCES})

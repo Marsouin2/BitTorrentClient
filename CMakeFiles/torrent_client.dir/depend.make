@@ -4,6 +4,10 @@
 CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.o: src/BytesManipulator/bytes_manipulator.cpp
 CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.o: src/BytesManipulator/bytes_manipulator.hpp
 
+CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o: src/Networking/network.cpp
+CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o: src/Networking/network.hpp
+CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o: src/Networking/patron_network.hpp
+
 CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BDictionary.h
 CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BInteger.h
 CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BItem.h
@@ -48,6 +52,8 @@ CMakeFiles/torrent_client.dir/src/main.cpp.o: lib/bencoding/PrettyPrinter.h
 CMakeFiles/torrent_client.dir/src/main.cpp.o: lib/bencoding/Utils.h
 CMakeFiles/torrent_client.dir/src/main.cpp.o: lib/bencoding/bencoding.h
 CMakeFiles/torrent_client.dir/src/main.cpp.o: src/BytesManipulator/bytes_manipulator.hpp
+CMakeFiles/torrent_client.dir/src/main.cpp.o: src/Networking/network.hpp
+CMakeFiles/torrent_client.dir/src/main.cpp.o: src/Networking/patron_network.hpp
 CMakeFiles/torrent_client.dir/src/main.cpp.o: src/TorrentManager/bencode_parser.hpp
 CMakeFiles/torrent_client.dir/src/main.cpp.o: src/TorrentManager/manage_torrent_file.hpp
 CMakeFiles/torrent_client.dir/src/main.cpp.o: src/TorrentManager/patron_manage_torrent_file.hpp

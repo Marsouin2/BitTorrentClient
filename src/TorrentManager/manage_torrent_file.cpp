@@ -64,8 +64,11 @@ void                        ManageTorrentFile::ConstituteFirstTorrentRequest(con
                                                                              const std::string torrent_length) { // constitute the url for the first request to the tracker
     // https://torrent.ubuntu.com/announce?info_hash=%9F%C2%0B%9E%98%EA%98%B4%A3%5Eb%23%04%1A%5E%F9N%A2x%09&peer_id=-PC0001-706887310628&uploaded=0&downloaded=0&left=2715254784&port=6889&compact=1
 
-    std::string final_request = torrent_announce + "?info_hash=" + torrent_info_hash + "&peer_id=-PC0001-706887310628&uploaded=0&downloaded=0&left=" + torrent_length + "&port=6889&compact=1";
-    std::cout << "final request : " << final_request << std::endl;
+    const std::string final_request = torrent_announce + "?info_hash=" + torrent_info_hash +
+                                      "&peer_id=-PC0001-706887310628&uploaded=0&downloaded=0&left=" +
+                                      torrent_length + "&port=6889&compact=1";
+    this->SetFinalUrl(final_request);
+    //std::cout << "final request : " << final_request << std::endl;
 
 }
 

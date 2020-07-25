@@ -4,6 +4,10 @@
 CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o: src/BytesManipulator/bytes_manipulator.cpp
 CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o: src/BytesManipulator/bytes_manipulator.hpp
 
+CMakeFiles/mylib.dir/src/Networking/network.cpp.o: src/Networking/network.cpp
+CMakeFiles/mylib.dir/src/Networking/network.cpp.o: src/Networking/network.hpp
+CMakeFiles/mylib.dir/src/Networking/network.cpp.o: src/Networking/patron_network.hpp
+
 CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BDictionary.h
 CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BInteger.h
 CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BItem.h
@@ -48,6 +52,8 @@ CMakeFiles/mylib.dir/src/main.cpp.o: lib/bencoding/PrettyPrinter.h
 CMakeFiles/mylib.dir/src/main.cpp.o: lib/bencoding/Utils.h
 CMakeFiles/mylib.dir/src/main.cpp.o: lib/bencoding/bencoding.h
 CMakeFiles/mylib.dir/src/main.cpp.o: src/BytesManipulator/bytes_manipulator.hpp
+CMakeFiles/mylib.dir/src/main.cpp.o: src/Networking/network.hpp
+CMakeFiles/mylib.dir/src/main.cpp.o: src/Networking/patron_network.hpp
 CMakeFiles/mylib.dir/src/main.cpp.o: src/TorrentManager/bencode_parser.hpp
 CMakeFiles/mylib.dir/src/main.cpp.o: src/TorrentManager/manage_torrent_file.hpp
 CMakeFiles/mylib.dir/src/main.cpp.o: src/TorrentManager/patron_manage_torrent_file.hpp

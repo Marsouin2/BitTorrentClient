@@ -1,6 +1,6 @@
 #include "my_own_exceptions.hpp"
 #include "TorrentManager/manage_torrent_file.hpp"
-//#include "Networking/network.hpp"
+#include "Networking/network.hpp"
 #include <iostream>
 
 int                         main(int argc, char **argv) {
@@ -10,7 +10,8 @@ int                         main(int argc, char **argv) {
 	}
         const std::string tempo_arg = argv[1];
         ManageTorrentFile torrent_manager(tempo_arg);
-        //Network             netw();
+        const std::string url_request = torrent_manager.GetFinalUrl();
+        Network             netw(url_request);
     }
     catch (const MyOwnExceptions& ex) {
         std::cerr << ex.GetErrorMessage() << std::endl;

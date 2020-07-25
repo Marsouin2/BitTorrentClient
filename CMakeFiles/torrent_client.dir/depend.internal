@@ -4,6 +4,10 @@
 CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.o
  /home/marsouin/Project/BitTorrentClient/src/BytesManipulator/bytes_manipulator.cpp
  /home/marsouin/Project/BitTorrentClient/src/BytesManipulator/bytes_manipulator.hpp
+CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o
+ /home/marsouin/Project/BitTorrentClient/src/Networking/network.cpp
+ /home/marsouin/Project/BitTorrentClient/src/Networking/network.hpp
+ /home/marsouin/Project/BitTorrentClient/src/Networking/patron_network.hpp
 CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o
  /home/marsouin/Project/BitTorrentClient/lib/bencoding/BDictionary.h
  /home/marsouin/Project/BitTorrentClient/lib/bencoding/BInteger.h
@@ -49,6 +53,8 @@ CMakeFiles/torrent_client.dir/src/main.cpp.o
  /home/marsouin/Project/BitTorrentClient/lib/bencoding/Utils.h
  /home/marsouin/Project/BitTorrentClient/lib/bencoding/bencoding.h
  /home/marsouin/Project/BitTorrentClient/src/BytesManipulator/bytes_manipulator.hpp
+ /home/marsouin/Project/BitTorrentClient/src/Networking/network.hpp
+ /home/marsouin/Project/BitTorrentClient/src/Networking/patron_network.hpp
  /home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.hpp
  /home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.hpp
  /home/marsouin/Project/BitTorrentClient/src/TorrentManager/patron_manage_torrent_file.hpp

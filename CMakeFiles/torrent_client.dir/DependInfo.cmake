@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/marsouin/Project/BitTorrentClient/src/BytesManipulator/bytes_manipulator.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.o"
+  "/home/marsouin/Project/BitTorrentClient/src/Networking/network.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o"
   "/home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o"
   "/home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o"
   "/home/marsouin/Project/BitTorrentClient/src/main.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/main.cpp.o"

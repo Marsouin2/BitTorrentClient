@@ -96,12 +96,12 @@ clean: CMakeFiles/torrent_client.dir/clean
 CMakeFiles/mylib.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=1,2,3,4,5 "Built target mylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target mylib"
 .PHONY : CMakeFiles/mylib.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mylib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marsouin/Project/BitTorrentClient/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marsouin/Project/BitTorrentClient/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mylib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/marsouin/Project/BitTorrentClient/CMakeFiles 0
 .PHONY : CMakeFiles/mylib.dir/rule
@@ -123,12 +123,12 @@ CMakeFiles/mylib.dir/clean:
 CMakeFiles/torrent_client.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=6,7,8,9,10 "Built target torrent_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/marsouin/Project/BitTorrentClient/CMakeFiles --progress-num=7,8,9,10,11,12 "Built target torrent_client"
 .PHONY : CMakeFiles/torrent_client.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/torrent_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marsouin/Project/BitTorrentClient/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marsouin/Project/BitTorrentClient/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/torrent_client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/marsouin/Project/BitTorrentClient/CMakeFiles 0
 .PHONY : CMakeFiles/torrent_client.dir/rule

@@ -1,16 +1,17 @@
 #include "patron_network.hpp"
 
-#include <boost/array.hpp>
-#include <boost/asio.hpp>
+#include <iostream>
+#include <string>
+#include "../include/curl/curl.h"
 
 class           Network
 {
 private:
 
 public:
-    Network(){};
+    Network(const std::string &url_request);
     ~Network(){};
-    void        Connect();
+    void        Connect(const std::string &url_request);
     void        Send();
     void        Receive();
 };
