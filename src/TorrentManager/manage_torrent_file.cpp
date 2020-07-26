@@ -35,7 +35,7 @@ const std::string                             ManageTorrentFile::GetInfoHash() {
     return "zizi";
 }
 
-std::string                             ManageTorrentFile::GetBencodeKeyContent(std::string const& json_string, std::string const& key) // turn string JSON to map <string, string>
+std::string                             ManageTorrentFile::GetBencodeKeyContent(std::string const& json_string, std::string const& key)
 {
     const std::string tempo_key = '\"' + key + "\": ";
     std::string key_content;
