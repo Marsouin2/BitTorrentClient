@@ -58,24 +58,69 @@ std::string                             Network::GetBencodeKeyContent(std::strin
     return key_content;
 }
 
+void                        TestStringDecimal(std::string &str)
+{
+    std::cout << "Integer value: ";
+    for (size_t i = 0 ; i < str.size(); ++i)
+        std::cout << (int)str[i] << ".";
+    std::cout << "\n";
+}
+
+void                                    GetTrackerIps(const std::string &peers_ips) { // in = string of peers out = map of <ip><port>
+    std::map<std::string, std::string>  decimal_peers_ips;
+    std::string                         tempo_constitute_ip;
+    int                                 tempo_constitute_port;
+    int                                 which_octet_number = 0; // on est au 3, 4 ou 5 ? (dernier de l'ip ou au port)
+
+    for (int y = 0; y < peers_ips.length(); ++y)
+    {
+        unsigned char                   tempo_peers_ips = peers_ips[y];
+        int                             i = tempo_peers_ips;
+
+        //std::cout << "y = " << y << " et which_octet_number = " << which_octet_number << std::endl;
+        if (which_octet_number == 3) {
+            tempo_constitute_ip = tempo_constitute_ip + std::to_string(i) + ':';
+            //std::cout << "constite up : " << tempo_constitute_ip << std::endl;
+        }
+        else if (which_octet_number == 4) { // on store le port
+            tempo_constitute_port = i;
+        }
+        else if (which_octet_number == 5) { // calcul port
+            tempo_constitute_port = tempo_constitute_port * 256 + i;
+            //decimal_peers_ips["port"] = std::to_string(tempo_constitute_port);
+            //std::cout << "string ip = " << tempo_constitute_ip << std::endl;
+            decimal_peers_ips[tempo_constitute_ip] = std::to_string(tempo_constitute_port);
+            tempo_constitute_ip.clear();
+            tempo_constitute_port = 0;
+            which_octet_number = -1;
+        }
+        else { // on fait l'ip
+            tempo_constitute_ip = tempo_constitute_ip + std::to_string(i) + '.';
+            //std::cout << "constite up : " << tempo_constitute_ip << std::endl;
+        }
+        which_octet_number++;
+    }
+    //std::cout << "cense donner : 249.109.220.203:51413 et 192.131.44.104:64042" << std::endl;
+    for (std::map<std::string, std::string>::iterator it = decimal_peers_ips.begin(); it != decimal_peers_ips.end(); ++it)
+    {
+        std::cout << it->first << ":" << it->second << std::endl;
+    }
+}
+
 void                        Network::GetPeersIps(const std::string &tracker_bencode) { // get the tracker response, decode bencode to get peers ip
     BencodeParser           bencode_parser(tracker_bencode);
 
     const std::string tracker_response = bencode_parser.GetBencodeDatas();
 
+    //std::cout << tracker_bencode << std::endl;
+    //std::cout << "---------------------------------------" << std::endl;
+
     std::string tempo =  GetBencodeKeyContent(tracker_response, "peers");
-    char zizi[300];
+
+    GetTrackerIps(tempo);
+
+    //https://stackoverflow.com/questions/50094674/how-to-parse-ip-and-port-from-http-tracker-response
     //https://stackoverflow.com/questions/33675913/how-can-i-decode-the-peers-value-in-the-tracker-response-bittorent
-    for (int i = 0; i < 300; i++) {
-        printf("%x | ", tempo[i]);
-        //sprintf((char*)&(zizi[i*2]), "%x", tempo[i]);
-    }
-    //std::cout << std::endl;
-
-    //sprintf((char*)zizi, "%x", tempo);
-    //std::cout << "zizi : " << zizi << std::endl;
-
-    //std::cout << "tracker response : " << tracker_bencode << std::endl;
 }
 
 void                        Network::FirstTrackerMessage() {
