@@ -133,11 +133,15 @@ fstream
 /home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.hpp
 math.h
 -
+sys/socket.h
+-
 arpa/inet.h
 -
 string.h
 -
 stdio.h
+-
+unistd.h
 -
 
 /home/marsouin/Project/BitTorrentClient/src/Networking/patron_network.hpp

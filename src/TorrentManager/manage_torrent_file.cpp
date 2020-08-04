@@ -27,6 +27,11 @@ const std::string                             ManageTorrentFile::GetInfoHash() {
         SHA1(p, tempo_info_hash_length, obuf);
         char buf[SHA_DIGEST_LENGTH * 2];
 
+        for (int i = 0; i < SHA_DIGEST_LENGTH; i++) {
+            printf("\\x%x", obuf[i]);
+        }
+        std::cout << std::endl;
+
         for (i = 0; i < SHA_DIGEST_LENGTH; i++) {
             sprintf((char*)&(buf[i*2]), "%02x", obuf[i]);
         }
@@ -80,9 +85,14 @@ void                        ManageTorrentFile::GetDecodedBencode() { // split th
     const std::string torrent_length = GetBencodeKeyContent(bencode_datas, "length");
     const std::string torrent_info_hash = GetInfoHash();
 
+    std::cout << std::endl;
+    //std::cout << "torrent info hash : " << torrent_info_hash << std::endl;
+
     BytesManipulator        bytes_manipulator(torrent_info_hash);
 
     const std::string       final_info_hash = bytes_manipulator.GetUrlEncodeInfoHash(); // get the urlencoded info_hash
+
+    std::cout << "final info hash : " << final_info_hash << std::endl;
 
     this->ConstituteFirstTorrentRequest(torrent_announce, final_info_hash, torrent_length); // need /name/info_hash/length
     //const std::string       bencode_string =
