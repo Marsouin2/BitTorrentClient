@@ -46,7 +46,7 @@ void                        Network::SendTcpMessage(const std::string &message_t
 void                        Network::ReadTcpMessage() {
     char buffer[1024] = { 0 };
     int valread = read(sock, buffer, 1024);
-    std::cout << "received : " << buffer << std::endl;
+    std::cout << "received " << valread << " caracters : " << buffer << std::endl;
 }
 
 void                                    Network::ConstituteHandshake()// make the very first request to a peer (the handshake) to know if he can dialogue with us

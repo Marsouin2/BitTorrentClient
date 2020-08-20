@@ -13,19 +13,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8c2eea18-80e1-4a48-a845-df849e867420" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/Networking/network.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/Networking/network.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/torrent_client" beforeDir="false" afterPath="$PROJECT_DIR$/bin/torrent_client" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libmylib.a" beforeDir="false" afterPath="$PROJECT_DIR$/libmylib.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Networking/network.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Networking/network.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Networking/network.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Networking/network.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/#test_tcp.cpp#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/subject/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/test_length.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/test_tcp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/subject/test_tcp.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -82,7 +79,13 @@
       <workItem from="1595672794101" duration="11276000" />
       <workItem from="1595860730654" duration="4581000" />
       <workItem from="1595885621540" duration="4582000" />
-      <workItem from="1596054091307" duration="40867000" />
+      <workItem from="1596054091307" duration="41572000" />
+      <workItem from="1596620022448" duration="19000" />
+      <workItem from="1596667014288" duration="692000" />
+      <workItem from="1596707920929" duration="1781000" />
+      <workItem from="1596797886062" duration="2793000" />
+      <workItem from="1597140750391" duration="6821000" />
+      <workItem from="1597842045444" duration="936000" />
     </task>
     <servers />
   </component>
@@ -94,6 +97,10 @@
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="418" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1588693999766" />
+    <state x="98" y="133" width="1724" height="849" key="DiffContextDialog" timestamp="1596708753918">
+      <screen x="0" y="33" width="1920" height="1047" />
+    </state>
+    <state x="98" y="133" width="1724" height="849" key="DiffContextDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1596708753918" />
     <state x="622" y="256" width="672" height="677" key="run.anything.popup" timestamp="1595639911945">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>

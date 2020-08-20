@@ -1,0 +1,9 @@
+#include <fstream>
+
+int		main()
+{
+  uint32_t	num;
+  const char	zizi[16] = "";
+  
+  return 0;
+}

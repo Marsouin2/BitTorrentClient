@@ -1,0 +1,56 @@
+moi = 192
+lui - 62
+
+Faire un read bloquant qui attends un message pour continuer le programme
+
+192 -> 62 = handshake 136
+62 -> 192 = handshake 141
+192 -> 62 = bitfield, len:0x1 74 // parfois inverse, peer envoie le bitfield en premier
+62 -> 192 = Bitfield, len:0x1 69 // 
+192 -> 62 = Interested 73
+62 -> 192 = unchoke 73
+192 -> 62 = Request, Piece 153 (il demande 4 pieces minimum) 153
+62 -> 192 = Piece, 1516 (il lui envoie une seule piece)
+192 -> 62 = Have, Piece (Idx: 0x0)
+
+Ensuite 62 lui envoie les pieces demandees auparavant
+
+
+handshake OK
+
+bitfield en x2
+bitfield[8]
+bitfield[0] = htonl(9)
+bitfield[4] = id
+send 9
+
+payload[4]
+[0] = htonl(0)
+send 4
+
+
+calculer le nombre de block / pieces pour dl le torrent :
+LE JOUEUR D'ECHEC :
+piece length = 16384 (classique) length = 66664
+ici 66664 / 16383 = 4
+int number of pieces = 4
+int last_piece_length = 66664 - (16383 * number_of_pieces) = 1132
+
+-1/Regarder dans le bitfield si le peer possede toutes les pieces (ici oui car f8 = 11111000)
+sois les 4 pieces + la derniere
+
+1/ separer les pieces en 16384
+2/ telecharger les block pour construire une piece
+3/ stocker le tout et l'assembler
+4/ une fois toutes les pieces telechargees on les assemble en 1 fichier
+
+
+Il faut read de 16383 + tout + recuperer le "payload" [3]
+
+piece : <len=0009+X><id=7><index><begin><block>
+             4        1      4      4
+
+block = [13]
+
+les \x0 bloquent la copie
+copier tous les 4 char dans un uint32_t et remplir le fichier avec
