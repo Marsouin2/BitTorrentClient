@@ -20,6 +20,23 @@ CMakeFiles/mylib.dir/src/Networking/network.cpp.o: src/Networking/network.hpp
 CMakeFiles/mylib.dir/src/Networking/network.cpp.o: src/Networking/patron_network.hpp
 CMakeFiles/mylib.dir/src/Networking/network.cpp.o: src/TorrentManager/bencode_parser.hpp
 
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BDictionary.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BInteger.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BItem.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BItemVisitor.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BList.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BString.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/Decoder.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/Encoder.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/PrettyPrinter.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/Utils.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/bencoding.h
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: src/Networking/network.hpp
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: src/Networking/patron_network.hpp
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: src/PeerManager/peer_manager.cpp
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: src/PeerManager/peer_manager.hpp
+CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o: src/TorrentManager/bencode_parser.hpp
+
 CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BDictionary.h
 CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BInteger.h
 CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BItem.h

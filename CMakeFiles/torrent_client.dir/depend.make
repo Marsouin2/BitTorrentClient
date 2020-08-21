@@ -20,6 +20,23 @@ CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o: src/Networking/netwo
 CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o: src/Networking/patron_network.hpp
 CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o: src/TorrentManager/bencode_parser.hpp
 
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BDictionary.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BInteger.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BItem.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BItemVisitor.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BList.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/BString.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/Decoder.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/Encoder.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/PrettyPrinter.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/Utils.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: lib/bencoding/bencoding.h
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: src/Networking/network.hpp
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: src/Networking/patron_network.hpp
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: src/PeerManager/peer_manager.cpp
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: src/PeerManager/peer_manager.hpp
+CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o: src/TorrentManager/bencode_parser.hpp
+
 CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BDictionary.h
 CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BInteger.h
 CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o: lib/bencoding/BItem.h

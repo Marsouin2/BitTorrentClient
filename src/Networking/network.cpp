@@ -1,12 +1,17 @@
 #include "network.hpp"
 
 Network::Network(const std::string &url_request) {
+    std::cout << "on send : " << url_request << std::endl;
     const std::string tracker_peer_bencode =  this->Send(url_request);
+    std::cout << "tracker peer bencode : " << tracker_peer_bencode << std::endl;
+    std::cout << "get peer ips 2" << std::endl;
     this->GetPeersIps(tracker_peer_bencode);
-    if (this->CreateTcpConnection("81.141.90.197", 51413) != -1) {
+    /*if (this->CreateTcpConnection("81.141.90.197", 51413) != -1) {
         this->ConstituteHandshake();
-    }
+    }*/
 }
+
+Network::Network() {} // si l'on veux juste envoyer des requetes SendTcpMessage();
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
 {
@@ -20,7 +25,7 @@ const std::string         Network::Send(const std::string &message) { // send a 
     std::string     reading_buffer;
 
     curl = curl_easy_init();
-    if(curl) {
+    if (curl) {
         /* First set the URL that is about to receive our POST. This URL can just as well be a https:// URL if that is what should receive the data. */
         curl_easy_setopt(curl, CURLOPT_URL, message.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
@@ -29,7 +34,7 @@ const std::string         Network::Send(const std::string &message) { // send a 
         res = curl_easy_perform(curl); // Perform the request, res will get the return code
 
         curl_easy_cleanup(curl); // always cleanup
-        return(reading_buffer);
+        return (reading_buffer);
     }
     return "error";
 }
@@ -49,7 +54,8 @@ void                        Network::ReadTcpMessage() {
     std::cout << "received " << valread << " caracters : " << buffer << std::endl;
 }
 
-void                                    Network::ConstituteHandshake()// make the very first request to a peer (the handshake) to know if he can dialogue with us
+/*
+ * void                                    Network::ConstituteHandshake()// make the very first request to a peer (the handshake) to know if he can dialogue with us
 {
     const int handshake_size = 1+19+8+20+20;
     char handshake[handshake_size];
@@ -71,9 +77,9 @@ void                                    Network::ConstituteHandshake()// make th
     std::copy(info_hash.begin(), info_hash.end(), &handshake[info_hash_offset]);
     std::copy(peer_id.begin(), peer_id.end(), &handshake[peer_id_offset]);
 
-    this->SendTcpMessage(handshake);
+    //this->SendTcpMessage(handshake);
     //std::cout << "handshake = " << handshake << std::endl;
-}
+}*/
 
 int                                     Network::CreateTcpConnection(const std::string &ip_addr, const int &port) {
     if ((this->sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
@@ -95,6 +101,33 @@ int                                     Network::CreateTcpConnection(const std::
         return -1;
     }
     return 0;
+}
+
+int                                     Network::HandleTcpConnection(const std::string &ip_addr, const int &port) // fait la connection et retourne la socket
+{
+    int                                 sock;
+    struct sockaddr_in                  serv_addr;
+
+
+    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+    {
+        std::cerr << "Socket creation error" << std::endl;
+        return -1;
+    }
+    serv_addr.sin_family = AF_INET;
+    serv_addr.sin_port = htons(port);
+
+    if (inet_pton(AF_INET, ip_addr.c_str(), &serv_addr.sin_addr) <= 0)
+    {
+        std::cerr << "Invalid address or the address not supported" << std::endl;
+        return -1;
+    }
+    if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
+    {
+        std::cerr << "Connection failed" << std::endl;
+        return -1;
+    }
+    return sock;
 }
 
 void                                    Network::Receive() { // receive the message from tracker / peer
@@ -154,7 +187,8 @@ void                                    Network::GetTrackerIps(const std::string
         }
         which_octet_number++;
     }
-    for (std::map<std::string, std::string>::iterator it = this->decimal_peers_ips.begin(); it != this->decimal_peers_ips.end(); ++it)
+    std::cout << "liste des ip:port :" << std::endl;
+    for (std::map<std::string, std::string>::iterator it = this->decimal_peers_ips.begin(); it != this->decimal_peers_ips.end(); ++it) // display peers ip/port
     {
         std::cout << it->first << ":" << it->second << std::endl;
     }
@@ -172,8 +206,4 @@ void                        Network::GetPeersIps(const std::string &tracker_benc
 
     //https://stackoverflow.com/questions/50094674/how-to-parse-ip-and-port-from-http-tracker-response
     //https://stackoverflow.com/questions/33675913/how-can-i-decode-the-peers-value-in-the-tracker-response-bittorent
-}
-
-void                        Network::FirstTrackerMessage() {
-
 }

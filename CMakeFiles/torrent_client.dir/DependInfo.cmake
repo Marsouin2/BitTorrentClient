@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/marsouin/Project/BitTorrentClient/src/BytesManipulator/bytes_manipulator.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.o"
   "/home/marsouin/Project/BitTorrentClient/src/Networking/network.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o"
+  "/home/marsouin/Project/BitTorrentClient/src/PeerManager/peer_manager.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o"
   "/home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o"
   "/home/marsouin/Project/BitTorrentClient/src/TorrentManager/manage_torrent_file.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o"
   "/home/marsouin/Project/BitTorrentClient/src/main.cpp" "/home/marsouin/Project/BitTorrentClient/CMakeFiles/torrent_client.dir/src/main.cpp.o"
@@ -21,6 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "src/Networking/patron_network.hpp"
   "src/my_own_exceptions.hpp"
   "src/TorrentManager/bencode_parser.hpp"
+  "src/PeerManager/peer_manager.hpp"
   "lib/bencoding/bencoding.h"
   )
 

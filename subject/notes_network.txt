@@ -54,3 +54,44 @@ block = [13]
 
 les \x0 bloquent la copie
 copier tous les 4 char dans un uint32_t et remplir le fichier avec
+
+FONCTIONNE DONC :
+
+pour un fichier de 66664 octets, on decoupe en 4*1 + 1 avec
+1/ buffer[16384 + 12] -> read de 16384 + 12 -> for (int i = 13; i != 16384+12; ++i)
+2/ buffer[16384 + 12] -> read de 16384 + 12 -> for (int i = 13; i != 16384+12; ++i)
+3/ buffer[16384 + 12] -> read de 16384 + 12 -> for (int i = 13; i != 16384+12; ++i)
+4/ buffer[16384 + 12] -> read de 16384 + 12 -> for (int i = 13; i != 16384+12; ++i)
+5/ buffer[1128 + 12] -> read de 1129 + 12 -> for (int i = 13; i != 1129+12; ++i)
+
+
+Maintenant :
+
+- Regarder le generateur de peer, qui semble ne pas donner les bonnes adresses ip
+- avec ses peers regarder leur bitfield pour voir si 1 peer possede toutes les pieces
+
+- faire le calcul pour les pieces et les block au cas ou le fichier et assez gros
+
+- ajouter la possibilite de mettre en pause et de relancer
+
+- ajouter la possibilite de partager un fichier torrent (have + pieces)
+
+
+Fonctionnement du torrent :
+Classes :
+- Bytes manipulator : gestion du bencode du .torrent
+- Networking : envoie les requetes tcp pour dialoguer avec le tracker / peers
+- PeerManager : va determiner a quels peer on doit demander quels pieces
+- PiecesManager : va determiner le nombre de pieces et de blocks qu'il va falloir dl
+- TorrentManager : gere les informations du .torrent
+
+1/ On fait tout pour recuperer les informations depuis le .torrent pour request le tracker.
+2/ On fait la requete pour le tracker et qu'il nous renvoie la liste des peers. <TorrentMan>
+3/ On fait les premieres requetes pour voir si il y a un peer qui possede toutes les pieces
+apres avoir checke le nombre de peers (si il y a trop de peers ca va etre trop long)
+<peermanager>/<torrentmanager>
+4/Une fois qu'on trouve un peer correct, on lance le telechargement <piecesmanager>
+<networking>
+5/ On donne les informations qu'il faut et on stocke/creer les informations et le fichier
+avec les calculs des pieces <piecesmanager><networking>
+6/ Fin

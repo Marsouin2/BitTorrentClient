@@ -110,10 +110,6 @@ PrettyPrinter.h
 Utils.h
 /home/marsouin/Project/BitTorrentClient/lib/bencoding/Utils.h
 
-/home/marsouin/Project/BitTorrentClient/src/Networking/network.cpp
-network.hpp
-/home/marsouin/Project/BitTorrentClient/src/Networking/network.hpp
-
 /home/marsouin/Project/BitTorrentClient/src/Networking/network.hpp
 patron_network.hpp
 /home/marsouin/Project/BitTorrentClient/src/Networking/patron_network.hpp
@@ -145,6 +141,20 @@ unistd.h
 -
 
 /home/marsouin/Project/BitTorrentClient/src/Networking/patron_network.hpp
+
+/home/marsouin/Project/BitTorrentClient/src/PeerManager/peer_manager.cpp
+peer_manager.hpp
+/home/marsouin/Project/BitTorrentClient/src/PeerManager/peer_manager.hpp
+
+/home/marsouin/Project/BitTorrentClient/src/PeerManager/peer_manager.hpp
+../Networking/network.hpp
+/home/marsouin/Project/BitTorrentClient/src/Networking/network.hpp
+iostream
+-
+map
+-
+string
+-
 
 /home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.hpp
 iostream

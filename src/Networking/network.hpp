@@ -1,3 +1,6 @@
+#ifndef _NETWORK_HPP_
+# define _NETWORK_HPP_
+
 #include "patron_network.hpp"
 
 #include <iostream>
@@ -25,6 +28,7 @@ private:
 
 public:
     Network(const std::string &url_request);
+    Network();
     ~Network(){};
     void                                Connect(const std::string &url_request);
     const std::string                   Send(const std::string &message);
@@ -38,5 +42,8 @@ public:
     int                                 CreateTcpConnection(const std::string &, const int &);
     void                                GetTrackerIps(const std::string &);
     void                                ConstituteHandshake();
+    int                                 HandleTcpConnection(const std::string &, const int &);
     //void                                SetHandshakeRequest(std::string &new_handshake_request) { this->handshake_request = new_handshake_request; };
 };
+
+#endif // _NETWORK_HPP_

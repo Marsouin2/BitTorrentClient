@@ -216,6 +216,36 @@ src/Networking/network.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/Networking/network.cpp.s
 .PHONY : src/Networking/network.cpp.s
 
+src/PeerManager/peer_manager.o: src/PeerManager/peer_manager.cpp.o
+
+.PHONY : src/PeerManager/peer_manager.o
+
+# target to build an object file
+src/PeerManager/peer_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o
+.PHONY : src/PeerManager/peer_manager.cpp.o
+
+src/PeerManager/peer_manager.i: src/PeerManager/peer_manager.cpp.i
+
+.PHONY : src/PeerManager/peer_manager.i
+
+# target to preprocess a source file
+src/PeerManager/peer_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.i
+.PHONY : src/PeerManager/peer_manager.cpp.i
+
+src/PeerManager/peer_manager.s: src/PeerManager/peer_manager.cpp.s
+
+.PHONY : src/PeerManager/peer_manager.s
+
+# target to generate assembly for a file
+src/PeerManager/peer_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrent_client.dir/build.make CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.s
+.PHONY : src/PeerManager/peer_manager.cpp.s
+
 src/TorrentManager/bencode_parser.o: src/TorrentManager/bencode_parser.cpp.o
 
 .PHONY : src/TorrentManager/bencode_parser.o
@@ -322,6 +352,9 @@ help:
 	@echo "... src/Networking/network.o"
 	@echo "... src/Networking/network.i"
 	@echo "... src/Networking/network.s"
+	@echo "... src/PeerManager/peer_manager.o"
+	@echo "... src/PeerManager/peer_manager.i"
+	@echo "... src/PeerManager/peer_manager.s"
 	@echo "... src/TorrentManager/bencode_parser.o"
 	@echo "... src/TorrentManager/bencode_parser.i"
 	@echo "... src/TorrentManager/bencode_parser.s"

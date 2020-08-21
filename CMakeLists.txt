@@ -12,6 +12,7 @@ set(NETWORKING_HEADER src/Networking)
 set(TORRENT_MANAGER_HEADER src/TorrentManager)
 set(BYTES_MANIPULATOR src/BytesManipulator)
 set(BENCODING_LIB lib/bencoding)
+set(PEER_MANAGER src/PeerManager)
 set(LIBBENCODING lib/)
 
 set(HEADER_FILES
@@ -22,10 +23,11 @@ set(HEADER_FILES
 			${NETWORKING_HEADER}/patron_network.hpp
 			src/my_own_exceptions.hpp
 			${TORRENT_MANAGER_HEADER}/bencode_parser.hpp
+			${PEER_MANAGER}/peer_manager.hpp
 			${BENCODING_LIB}/bencoding.h
 )
 
-set(SOURCES src/main.cpp ${TORRENT_MANAGER_HEADER}/manage_torrent_file.cpp ${TORRENT_MANAGER_HEADER}/bencode_parser.cpp ${BYTES_MANIPULATOR}/bytes_manipulator.cpp ${NETWORKING_HEADER}/network.cpp)
+set(SOURCES src/main.cpp ${TORRENT_MANAGER_HEADER}/manage_torrent_file.cpp ${TORRENT_MANAGER_HEADER}/bencode_parser.cpp ${BYTES_MANIPULATOR}/bytes_manipulator.cpp ${NETWORKING_HEADER}/network.cpp ${PEER_MANAGER}/peer_manager.cpp)
 
 add_library(mylib ${SOURCES} ${HEADER_FILES})
 add_executable(torrent_client ${SOURCES})
