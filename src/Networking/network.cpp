@@ -1,10 +1,10 @@
 #include "network.hpp"
 
 Network::Network(const std::string &url_request) {
-    std::cout << "on send : " << url_request << std::endl;
+    //std::cout << "on send : " << url_request << std::endl;
     const std::string tracker_peer_bencode =  this->Send(url_request);
-    std::cout << "tracker peer bencode : " << tracker_peer_bencode << std::endl;
-    std::cout << "get peer ips 2" << std::endl;
+    //std::cout << "tracker peer bencode : " << tracker_peer_bencode << std::endl;
+    //std::cout << "get peer ips 2" << std::endl;
     this->GetPeersIps(tracker_peer_bencode);
     /*if (this->CreateTcpConnection("81.141.90.197", 51413) != -1) {
         this->ConstituteHandshake();
@@ -39,16 +39,42 @@ const std::string         Network::Send(const std::string &message) { // send a 
     return "error";
 }
 
-void                        Network::SendTcpMessage(const std::string &message_to_send)
+void                        Network::SendTcpMessage(const std::string &message_to_send, int &sock)
 {
     const char* tempo_message = message_to_send.c_str();
 
-    send(this->sock, tempo_message, strlen(tempo_message), 0);
+    send(sock, tempo_message, strlen(tempo_message), 0);
     std::cout << "sending : " << tempo_message << std::endl;
-    this->ReadTcpMessage(); // on read la reponse du peer
+    this->ReadTcpMessage(sock); // on read la reponse du peer
 }
 
-void                        Network::ReadTcpMessage() {
+void                        Network::SendHandshakeRequest(const std::string &info_hash, int &sock) // send the handshake to the socket precised
+{
+    const int handshake_size = 1+19+8+20+20;
+    std::string handshake;
+    handshake.resize(handshake_size);
+
+    const int protocol_name_offset = 1;
+    const int reserved_offset = protocol_name_offset + 19;
+    const int info_hash_offset = reserved_offset + 8;
+    const int peer_id_offset = info_hash_offset + 20;
+
+    const char prefix = '\x13';
+    const std::string BitTorrent_protocol = "BitTorrent protocol";
+    //const std::string info_hash = "\x6a\x41\xe2\xa6\x7b\x7f\x90\x15\xd3\xfb\x23\x9\xdb\xbd\x2f\xa0\xe2\x5\x43\xac"; // echecs
+    const std::string peer_id = "-PC0001-702887310628";
+
+    handshake[0] = prefix; // length prefix of the string
+    std::copy(BitTorrent_protocol.begin(), BitTorrent_protocol.end(), &handshake[protocol_name_offset]);
+    for (int i = reserved_offset; i != reserved_offset + 8; ++i)
+        handshake[i] = '0';
+    std::copy(info_hash.begin(), info_hash.end(), &handshake[info_hash_offset]);
+    std::copy(peer_id.begin(), peer_id.end(), &handshake[peer_id_offset]);
+    this->SendTcpMessage(handshake, sock);
+    //send(handshake);
+}
+
+void                        Network::ReadTcpMessage(int &sock) {
     char buffer[1024] = { 0 };
     int valread = read(sock, buffer, 1024);
     std::cout << "received " << valread << " caracters : " << buffer << std::endl;

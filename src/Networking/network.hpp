@@ -37,12 +37,15 @@ public:
     std::string                         GetBencodeKeyContent(std::string const&, std::string const&); // duplication
     void                                Receive();
     void                                AddPeersInMap(std::string &ip_key_name, int &port_content) { this->decimal_peers_ips[ip_key_name] = std::to_string(port_content); };
-    void                                SendTcpMessage(const std::string &);
-    void                                ReadTcpMessage();
+    void                                SendTcpMessage(const std::string &, int &);
+    std::map<std::string, std::string>  GetPeersList() { return this->decimal_peers_ips; };
+    void                                ReadTcpMessage(int &sock);
     int                                 CreateTcpConnection(const std::string &, const int &);
     void                                GetTrackerIps(const std::string &);
+    // RETURN LES BONS IP:PORT DU PEER QUI A TOUTES LES PIECES
     void                                ConstituteHandshake();
     int                                 HandleTcpConnection(const std::string &, const int &);
+    void                                SendHandshakeRequest(const std::string &, int &sock);
     //void                                SetHandshakeRequest(std::string &new_handshake_request) { this->handshake_request = new_handshake_request; };
 };
 

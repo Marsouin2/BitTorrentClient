@@ -23,4 +23,5 @@ void                        PeerManager::TryBitfieldPieces(std::string peer_ip, 
 
     //netw.CreateTcpConnection(peer_ip, peer_port);
     sock = netw.HandleTcpConnection(peer_ip, std::stoi(peer_port, &sz));
+    netw.Send(, sock);
 }

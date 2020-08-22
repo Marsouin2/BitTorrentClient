@@ -3,10 +3,28 @@
 ManageTorrentFile::ManageTorrentFile(const std::string &torrent_file) {
     this->torrent_filename = torrent_file;
     this->OpenAndRead();
-    this->GetDecodedBencode();
+    this->GetDecodedBencode(); // we got all the informations we needed to handshake
+
+    this->ConnectToTracker(); // connect to tracker with Network class and store the socket in ManageTorrent Class to use it later, and send it to PeerManager
+    this->GetThePerfectPeer(); // call the class <PeerManager> qui va regarder tous les bitfield des peers jusqu'a trouver le bon
 }
 
-const std::string                             ManageTorrentFile::GetInfoHash() {
+void                                            ManageTorrentFile::ConnectToTracker() // on set la peer list
+{
+    Network                                     netw(this->GetFinalUrl());
+
+    const std::map<std::string, std::string>    peer_list = netw.GetPeersList();
+    this->SetPeersList(peer_list);
+}
+
+void                                            ManageTorrentFile::GetThePerfectPeer() // call <PeerManager> that will make requests to get bitfields
+{
+    PeerManager                                 peer_manager;
+
+    peer_manager.GetPerfectPeer();
+}
+
+const std::string                               ManageTorrentFile::GetInfoHash() {
     const std::string to_find = "info";
 
     size_t found = this->torrent_bencode.find(to_find);
@@ -97,7 +115,7 @@ void                        ManageTorrentFile::GetDecodedBencode() { // split th
 
     std::cout << "final info hash : " << final_info_hash << std::endl;
 
-    this->ConstituteFirstTorrentRequest(torrent_announce, final_info_hash, torrent_length); // need /name/info_hash/length
+    //this->ConstituteFirstTorrentRequest(torrent_announce, final_info_hash, torrent_length); // need /name/info_hash/length
 }
 
 int                         ManageTorrentFile::OpenAndRead() { // open the torrent and store the content (called bencode) inside an std::string

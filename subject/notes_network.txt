@@ -95,3 +95,10 @@ apres avoir checke le nombre de peers (si il y a trop de peers ca va etre trop l
 5/ On donne les informations qu'il faut et on stocke/creer les informations et le fichier
 avec les calculs des pieces <piecesmanager><networking>
 6/ Fin
+
+
+void		Network::SendHandshake(int &sock) {}
++2 read : 1 pour le handshake et 1 pour le bitfield
+
+stocker le socket du tracker et une fois toutes les ip des peers, stocker chaque ip:port
+des peers jusqu'a trouver le peer qui possede tout
