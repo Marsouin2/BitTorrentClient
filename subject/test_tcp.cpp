@@ -182,7 +182,7 @@ void			SendRequestMessage(std::ofstream &output_file, int &valread, int &sock, i
       output_file << buffer1[i];
       i++;
     }
-    printf("On a mis %d caracteres dans le ficiher\n", 16399 - 13);
+    printf("On a mis %d caracteres dans le fichier\n", 16399 - 13);
   }
 }
 

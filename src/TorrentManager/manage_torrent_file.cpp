@@ -19,12 +19,13 @@ void                                            ManageTorrentFile::ConnectToTrac
 
 void                                            ManageTorrentFile::GetThePerfectPeer() // call <PeerManager> that will make requests to get bitfields
 {
-    PeerManager                                 peer_manager(this->piece_length, this->torrent_total_length);
+    PeerManager                                 peer_manager(this->piece_length, this->torrent_total_length,
+                                                             this->torrent_final_output_filename, this->torrent_hex_info_hash);
 
     this->perfect_peer = peer_manager.GetPerfectPeer(this->peers_list, this->torrent_hex_info_hash); // returns the peer with all pieces <ip><port>
     if (this->perfect_peer.first != "null") // ("null", 0) or ("ip", port)
     { // on a trouve le peer parfait
-        
+        peer_manager.DownloadTheTorrent(); // on dl le fichier
     }
     else
         std::cout << "No peer is seeding the torrent...closing..." << std::endl;
