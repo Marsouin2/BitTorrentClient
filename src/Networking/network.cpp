@@ -1,11 +1,10 @@
 #include "network.hpp"
 
 Network::Network(const std::string &url_request) {
-    //std::cout << "on send : " << url_request << std::endl;
-    const std::string tracker_peer_bencode =  this->Send(url_request);
-    //std::cout << "tracker peer bencode : " << tracker_peer_bencode << std::endl;
-    //std::cout << "get peer ips 2" << std::endl;
-    this->GetPeersIps(tracker_peer_bencode);
+    std::cout << "on send : " << url_request << std::endl;
+    const std::string tracker_peer_bencode = this->Send(url_request);
+    std::cout << "peers_ip" << std::endl;
+    this->GetPeersIps(tracker_peer_bencode); // get the peers ips
     /*if (this->CreateTcpConnection("81.141.90.197", 51413) != -1) {
         this->ConstituteHandshake();
     }*/
@@ -26,7 +25,6 @@ const std::string         Network::Send(const std::string &message) { // send a 
 
     curl = curl_easy_init();
     if (curl) {
-        /* First set the URL that is about to receive our POST. This URL can just as well be a https:// URL if that is what should receive the data. */
         curl_easy_setopt(curl, CURLOPT_URL, message.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &reading_buffer);
@@ -34,21 +32,37 @@ const std::string         Network::Send(const std::string &message) { // send a 
         res = curl_easy_perform(curl); // Perform the request, res will get the return code
 
         curl_easy_cleanup(curl); // always cleanup
+        std::cout << "tracker answering : " << reading_buffer << std::endl;
         return (reading_buffer);
     }
+    std::cout << "error" << std::endl;
     return "error";
 }
 
 void                        Network::SendTcpMessage(const std::string &message_to_send, int &sock)
 {
     const char* tempo_message = message_to_send.c_str();
+    char buffer[1024] = { 0 };
 
     send(sock, tempo_message, strlen(tempo_message), 0);
     std::cout << "sending : " << tempo_message << std::endl;
-    this->ReadTcpMessage(sock); // on read la reponse du peer
+    int valread = read(sock, buffer, 1024);
+    for (int i = 0; i != valread; ++i)
+        printf("\\x%x", buffer);
+    //this->ReadTcpMessage(sock); // on read la reponse du peer
 }
 
-void                        Network::SendHandshakeRequest(const std::string &info_hash, int &sock) // send the handshake to the socket precised
+
+const std::string           Network::ReadTcpMessage(int &sock)
+{
+    char buffer[1024] = { 0 };
+    int valread = read(sock, buffer, 1024);
+    std::string               ret_read_value(buffer);
+    //std::cout << "received " << valread << " caracters : " << buffer << std::endl;
+    return ret_read_value;
+}
+
+std::string                        Network::SendHandshakeRequest(const std::string &info_hash, int &sock) // send the handshake to the socket precised
 {
     const int handshake_size = 1+19+8+20+20;
     std::string handshake;
@@ -61,7 +75,7 @@ void                        Network::SendHandshakeRequest(const std::string &inf
 
     const char prefix = '\x13';
     const std::string BitTorrent_protocol = "BitTorrent protocol";
-    //const std::string info_hash = "\x6a\x41\xe2\xa6\x7b\x7f\x90\x15\xd3\xfb\x23\x9\xdb\xbd\x2f\xa0\xe2\x5\x43\xac"; // echecs
+    const std::string info_hash2 = "\x6a\x41\xe2\xa6\x7b\x7f\x90\x15\xd3\xfb\x23\x9\xdb\xbd\x2f\xa0\xe2\x5\x43\xac"; // echecs
     const std::string peer_id = "-PC0001-702887310628";
 
     handshake[0] = prefix; // length prefix of the string
@@ -70,14 +84,18 @@ void                        Network::SendHandshakeRequest(const std::string &inf
         handshake[i] = '0';
     std::copy(info_hash.begin(), info_hash.end(), &handshake[info_hash_offset]);
     std::copy(peer_id.begin(), peer_id.end(), &handshake[peer_id_offset]);
-    this->SendTcpMessage(handshake, sock);
+    return handshake;
+    //this->SendTcpMessage(handshake, sock);
     //send(handshake);
 }
 
-void                        Network::ReadTcpMessage(int &sock) {
-    char buffer[1024] = { 0 };
-    int valread = read(sock, buffer, 1024);
-    std::cout << "received " << valread << " caracters : " << buffer << std::endl;
+void                        Network::CloseSocket(const int &socket)
+{
+    CloseSocket(socket);
+    //socket.close();
+    /*if (socket.close() != -1)
+        return 0;
+    return -1;*/
 }
 
 /*
@@ -131,16 +149,17 @@ int                                     Network::CreateTcpConnection(const std::
 
 int                                     Network::HandleTcpConnection(const std::string &ip_addr, const int &port) // fait la connection et retourne la socket
 {
-    int                                 sock;
+    int sock;
     struct sockaddr_in                  serv_addr;
 
-
+    std::cout << "trying to connect to peer : " << ip_addr.c_str() << ":" << port << std::endl;
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
         std::cerr << "Socket creation error" << std::endl;
         return -1;
     }
     serv_addr.sin_family = AF_INET;
+    serv_addr.sin_addr.s_addr = inet_addr(ip_addr.c_str());
     serv_addr.sin_port = htons(port);
 
     if (inet_pton(AF_INET, ip_addr.c_str(), &serv_addr.sin_addr) <= 0)
@@ -153,7 +172,8 @@ int                                     Network::HandleTcpConnection(const std::
         std::cerr << "Connection failed" << std::endl;
         return -1;
     }
-    return sock;
+    std::cout << "connection to : " << ip_addr << ":" << port << " succeed" << std::endl;
+    return 0;
 }
 
 void                                    Network::Receive() { // receive the message from tracker / peer

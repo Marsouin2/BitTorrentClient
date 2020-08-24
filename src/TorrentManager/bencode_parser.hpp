@@ -30,9 +30,9 @@ private:
     std::string                                 bencode_datas; // real bencode_datas
     TorrentDatas                                torrent_datas;
 
-    //std::string                                 decoded_bencode;
-    //std::map<std::string, std::string>          bencode_informations;
-    //std::vector<std::string>                    tempo_map_stored;*/
+    std::string                                 torrent_length;
+    std::string                                 piece_length;
+    std::string                                 torrent_name;
 
 public:
     BencodeParser(std::string encoded_bencode_);
@@ -43,15 +43,13 @@ public:
     //void                                        GetInfoHash2();
     void                                        SetBencodeDatas(const std::string new_bencode_datas) { this->bencode_datas = new_bencode_datas; };
     const std::string                           GetBencodeDatas() { return this->bencode_datas; };
+    void                                        SetTorrentLength(const std::string &torrent_length) { this->torrent_length = torrent_length; };
+    void                                        SetPieceLength(const std::string &piece_length) { this->piece_length = piece_length; };
+    void                                        SetTorrentName(const std::string &torrent_name) { this->torrent_name = torrent_name; };
+    const int                                   GetTorrentLength() { return stoi(this->torrent_length); } ;
+    const int                                   GetPieceLength() { return stoi(this->piece_length); };
+    const std::string                           GetTorrentName() { return this->torrent_name; };
 
-
-    //std::map<std::string, std::string>          GetBencodeInformations() { return this->bencode_informations; };
-    /*void                                        DeleteNumbersAndColon(); // delete the {70:} from the torrent's bencode
-    void                                        BencodeToJson();
-    std::string                                 GetIntegerInsideAString(int i);
-    void                                        ErasePartOfBencode();
-    std::string                                 StoreCreationDate();
-    void                                        UseBencodeParser();*/
 };
 
 #endif // BENCODE_PARSER_HPP_

@@ -13,23 +13,53 @@
   <component name="ChangeListManager">
     <list default="true" id="8c2eea18-80e1-4a48-a845-df849e867420" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Progress/2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Progress/5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/Networking/network.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/BytesManipulator/bytes_manipulator.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/bencode_parser.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/BytesManipulator/bytes_manipulator.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/bencode_parser.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/torrent_client" beforeDir="false" afterPath="$PROJECT_DIR$/bin/torrent_client" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libmylib.a" beforeDir="false" afterPath="$PROJECT_DIR$/libmylib.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Networking/network.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Networking/network.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Networking/network.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Networking/network.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PeerManager/peer_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeerManager/peer_manager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PeerManager/peer_manager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeerManager/peer_manager.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TorrentManager/bencode_parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/bencode_parser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TorrentManager/bencode_parser.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/bencode_parser.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subject/notes_network.txt" beforeDir="false" afterPath="$PROJECT_DIR$/subject/notes_network.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/Les_echecs.epub" beforeDir="false" afterPath="$PROJECT_DIR$/subject/Les_echecs.epub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/subject/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/test_tcp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/subject/test_tcp.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +126,9 @@
       <workItem from="1597842045444" duration="936000" />
       <workItem from="1597954507380" duration="535000" />
       <workItem from="1597963872811" duration="9005000" />
-      <workItem from="1598027788926" duration="8481000" />
+      <workItem from="1598027788926" duration="8695000" />
+      <workItem from="1598217469852" duration="11970000" />
+      <workItem from="1598259082864" duration="26183000" />
     </task>
     <servers />
   </component>
@@ -112,9 +144,9 @@
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="622" y="256" width="672" height="677" key="run.anything.popup/0.33.1920.1047@0.33.1920.1047" timestamp="1595639911945" />
-    <state x="623" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1598032818964">
+    <state x="623" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1598260149071">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
-    <state x="623" y="264" width="672" height="678" key="search.everywhere.popup/0.33.1920.1047@0.33.1920.1047" timestamp="1598032818964" />
+    <state x="623" y="264" width="672" height="678" key="search.everywhere.popup/0.33.1920.1047@0.33.1920.1047" timestamp="1598260149071" />
   </component>
 </project>

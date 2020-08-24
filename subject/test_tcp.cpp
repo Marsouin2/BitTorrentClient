@@ -15,8 +15,15 @@
 //#define PORT 53703 // echec
 //#define IP "185.157.245.92" // echec
 
-#define IP "173.179.238.34"
-#define PORT 39530
+//test
+//#define IP "104.188.95.55"
+//#define PORT 13873
+
+//#define IP "173.179.238.34"
+//#define PORT 39530
+
+#define IP "37.59.56.169" // bon peer pour echec
+#define PORT 13471
 
 
 std::string			        Handshake()
@@ -35,9 +42,14 @@ std::string			        Handshake()
   const char prefix = '\x13';
   const std::string BitTorrent_protocol = "BitTorrent protocol";
   //const std::string info_hash = "\x9f\xc2\xb\x9e\x98\xea\x98\xb4\xa3\x5e\x62\x23\x4\x1a\x5e\xf9\x4e\xa2\x78\x9"; // ubuntu
-  const std::string info_hash = "\x6a\x41\xe2\xa6\x7b\x7f\x90\x15\xd3\xfb\x23\x9\xdb\xbd\x2f\xa0\xe2\x5\x43\xac"; // echecs
+  const std::string info_hash = "\x6a\x41\xe2\xa6\x7b\x7f\x90\x15\xd3\xfb\x23\x09\xdb\xbd\x2f\xa0\xe2\x5\x43\xac"; // echecs
+  //\x6a\x41\xe2\xa6\x7b\x7f\x90\x15\xd3\xfb\x23\x09\xdb\xbd\x2f\xa0\xe2\x05\x43\xac
   const std::string peer_id = "-PC0001-702887310628";
 
+  for (int i = 0; i != info_hash.length(); ++i)
+    printf("\\x%x", info_hash[i]);
+  printf("\n");
+  
   handshake[0] = prefix; // length prefix of the string
   std::copy(BitTorrent_protocol.begin(), BitTorrent_protocol.end(), &handshake[protocol_name_offset]);
   for (int i = reserved_offset; i != reserved_offset + 8; ++i)
@@ -45,7 +57,7 @@ std::string			        Handshake()
   std::copy(info_hash.begin(), info_hash.end(), &handshake[info_hash_offset]);
   std::copy(peer_id.begin(), peer_id.end(), &handshake[peer_id_offset]);
 
-  //std::cout << "handshake = " << handshake << std::endl;
+  std::cout << "handshake = " << handshake << std::endl;
   return handshake;
 }
 
@@ -177,7 +189,6 @@ void			SendRequestMessage(std::ofstream &output_file, int &valread, int &sock, i
 int main(int argc, char const *argv[])
 {
   int sock = 0, valread;
-  //bool continue = true;
   struct sockaddr_in serv_addr;
 
   // ---------------------------------------------------
@@ -188,19 +199,24 @@ int main(int argc, char const *argv[])
       std::cerr << "Socket creation error" << std::endl;
       return -1;
     }
-
+  
+  //serv_addr.sin_addr.s_addr = inet_addr(IP);
   serv_addr.sin_family = AF_INET;
   serv_addr.sin_port = htons(PORT);
 
-  if (inet_pton(AF_INET, IP, &serv_addr.sin_addr) <= 0)
+  std::cout << "connect to " << IP << ":" << PORT << std::endl;
+  int s;
+  if (s = inet_pton(AF_INET, IP, &serv_addr.sin_addr) <= 0)
     {
-      std::cerr << "Invalid address / Adress not supported" << std::endl;
+      std::cout << "Invalid address / Adress not supported" << std::endl;
       return -1;
     }
-
-  if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
+  std::cout << s << std::endl;
+  std::cout << "connect 2" << std::endl;
+  if ((s = connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr))) < 0)
     {
       std::cerr << "Connection Failed" << std::endl;
+      std::cout << s << std::endl;
       return -1;
     }
   std::cout << "Connexion OK" << std::endl;

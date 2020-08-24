@@ -2,7 +2,7 @@
 
 ManageTorrentFile::ManageTorrentFile(const std::string &torrent_file) {
     this->torrent_filename = torrent_file;
-    this->OpenAndRead();
+    this->OpenAndRead(); // open and read the .torrent file
     this->GetDecodedBencode(); // we got all the informations we needed to handshake
 
     this->ConnectToTracker(); // connect to tracker with Network class and store the socket in ManageTorrent Class to use it later, and send it to PeerManager
@@ -19,9 +19,15 @@ void                                            ManageTorrentFile::ConnectToTrac
 
 void                                            ManageTorrentFile::GetThePerfectPeer() // call <PeerManager> that will make requests to get bitfields
 {
-    PeerManager                                 peer_manager;
+    PeerManager                                 peer_manager(this->piece_length, this->torrent_total_length);
 
-    peer_manager.GetPerfectPeer();
+    this->perfect_peer = peer_manager.GetPerfectPeer(this->peers_list, this->torrent_hex_info_hash); // returns the peer with all pieces <ip><port>
+    if (this->perfect_peer.first != "null") // ("null", 0) or ("ip", port)
+    { // on a trouve le peer parfait
+        
+    }
+    else
+        std::cout << "No peer is seeding the torrent...closing..." << std::endl;
 }
 
 const std::string                               ManageTorrentFile::GetInfoHash() {
@@ -45,10 +51,11 @@ const std::string                               ManageTorrentFile::GetInfoHash()
         SHA1(p, tempo_info_hash_length, obuf);
         char buf[SHA_DIGEST_LENGTH * 2];
 
-        /*for (int i = 0; i < SHA_DIGEST_LENGTH; i++) {
-            printf("\\x%x", obuf[i]);
-        }
-        std::cout << std::endl;*/
+        char tempo[20]; // to copy the unsigned char to a char to copy it into a string
+        for (int f = 0; f != 20; ++f)
+            tempo[f] = obuf[f];
+
+        this->torrent_hex_info_hash.assign(tempo, 20);
 
         for (i = 0; i < SHA_DIGEST_LENGTH; i++) {
             sprintf((char*)&(buf[i*2]), "%02x", obuf[i]);
@@ -91,6 +98,7 @@ void                        ManageTorrentFile::ConstituteFirstTorrentRequest(con
                                       "&peer_id=-PC0001-706887310628&uploaded=0&downloaded=0&left=" +
                                       torrent_length + "&port=6889&compact=1";
     this->SetFinalUrl(final_request);
+    this->SetInfoHash(torrent_info_hash);
     //std::cout << "final request : " << final_request << std::endl;
 
 }
@@ -103,19 +111,19 @@ void                        ManageTorrentFile::GetDecodedBencode() { // split th
     const std::string torrent_length = GetBencodeKeyContent(bencode_datas, "length");
     const std::string torrent_info_hash = GetInfoHash();
 
-    std::cout << std::endl;
-    std::cout << "torrent info hash : " << torrent_info_hash << std::endl;
+    // get torrent informations for the future
+    this->piece_length = bencode_parser.GetPieceLength();
+    this->torrent_total_length = bencode_parser.GetTorrentLength();
+    this->torrent_final_output_filename = bencode_parser.GetTorrentName();
 
     // 6a41e2a67b7f9015d3fb2309dbbd2fa0e20543ac
 
-    //BytesManipulator        bytes_manipulator(torrent_info_hash);
+    //this->ConstituteHexFinalHash(torrent_info_hash); // constitute the info_hash(\x21\xsf...) pour le handashak
     BytesManipulator        bytes_manipulator(torrent_info_hash);
 
     const std::string       final_info_hash = bytes_manipulator.GetUrlEncodeInfoHash(); // get the urlencoded info_hash
 
-    std::cout << "final info hash : " << final_info_hash << std::endl;
-
-    //this->ConstituteFirstTorrentRequest(torrent_announce, final_info_hash, torrent_length); // need /name/info_hash/length
+    this->ConstituteFirstTorrentRequest(torrent_announce, final_info_hash, torrent_length); // need /name/info_hash/length
 }
 
 int                         ManageTorrentFile::OpenAndRead() { // open the torrent and store the content (called bencode) inside an std::string

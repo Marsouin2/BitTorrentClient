@@ -139,6 +139,10 @@ math.h
 -
 sys/socket.h
 -
+sys/types.h
+-
+netinet/tcp.h
+-
 arpa/inet.h
 -
 string.h
@@ -147,17 +151,33 @@ stdio.h
 -
 unistd.h
 -
+fcntl.h
+-
+poll.h
+-
+time.h
+-
 
 /home/marsouin/Project/BitTorrentClient/src/Networking/patron_network.hpp
+
+/home/marsouin/Project/BitTorrentClient/src/PeerManager/peer_manager.cpp
+peer_manager.hpp
+/home/marsouin/Project/BitTorrentClient/src/PeerManager/peer_manager.hpp
 
 /home/marsouin/Project/BitTorrentClient/src/PeerManager/peer_manager.hpp
 ../Networking/network.hpp
 /home/marsouin/Project/BitTorrentClient/src/Networking/network.hpp
+algorithm
+-
+bitset
+-
 iostream
 -
 map
 -
 string
+-
+utility
 -
 
 /home/marsouin/Project/BitTorrentClient/src/TorrentManager/bencode_parser.hpp
