@@ -10,6 +10,8 @@ PeerManager::PeerManager(int piece_length, int torrent_total_length,
         this->piece_length = 16383;
     else
         this->piece_length = piece_length;
+
+    this->percentage_already_dl = 0.00;
 //this->DetermineTheGoodPeer(peers);
 }
 
@@ -242,6 +244,13 @@ void                    PeerManager::GetLastPieceLength()
     this->last_piece_length = this->torrent_total_length - reste;
 }
 
+double                  PeerManager::GetPercentageAdvancment(int piece_value)
+{
+    double              percentage = ((double)piece_value * 100.0) / (double)this->torrent_total_length;
+
+    return this->percentage_already_dl = this->percentage_already_dl + percentage;
+}
+
 void                    PeerManager::SendRequestMessage(std::ofstream &output_file, int &valread, int &sock, int index) {
     //std::cout << "On check si " << index - 1 << " == " << this->number_of_pieces << std::endl;
     if (index == this->number_of_pieces - 1) // last piece
@@ -292,7 +301,7 @@ void                    PeerManager::SendRequestMessage(std::ofstream &output_fi
             output_file << buffer[i];
             i++;
         }
-        std::cout /*<< this->GetPercentageAdvancment*/ << "Downloading piece #" << index + 1 << " from 1 peer" << std::endl;
+        std::cout << "(" << std::setprecision(4) << this->GetPercentageAdvancment(this->last_piece_length) << "%) " << "Downloading piece #" << index + 1 << " from 1 peer" << std::endl;
         output_file.close();
     }
     else
@@ -309,6 +318,6 @@ void                    PeerManager::SendRequestMessage(std::ofstream &output_fi
             output_file << buffer[i];
             i++;
         }
-        std::cout /*<< this->GetPercentageAdvancment*/ << "Downloading piece #" << index + 1 << " from 1 peer" << std::endl;
+        std::cout << "(" << std::setprecision(4) << this->GetPercentageAdvancment(this->max_piece_length) << "%) " << "Downloading piece #" << index + 1 << " from 1 peer" << std::endl;
     }
 }

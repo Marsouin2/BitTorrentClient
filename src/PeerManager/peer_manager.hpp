@@ -7,6 +7,7 @@
 #include <bitset>
 #include <iostream>
 #include <map>
+#include <iomanip>
 #include <string>
 #include <utility>
 
@@ -20,6 +21,7 @@ private:
     std::string                         torrent_final_output_filename;
     int                                 torrent_total_length;
     std::string                         torrent_hex_info_hash;
+    double                              percentage_already_dl;
     std::string                         perfect_peer_ip;
     int                                 perfect_peer_port;
 
@@ -34,6 +36,7 @@ public:
     void                                SetPerfectPeerIp(const std::string &str) { this->perfect_peer_ip = str; };
     void                                SetPerfectPeerPort(const int &new_port) { this->perfect_peer_port = new_port; };
     int                                 DownloadTheTorrent();
+    double                              GetPercentageAdvancment(int piece_value);
 
     void                                SendRequestMessage(std::ofstream &, int &, int &, int );
     void                                GetLastPieceLength();
