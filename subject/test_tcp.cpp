@@ -173,6 +173,7 @@ void			SendRequestMessage(std::ofstream &output_file, int &valread, int &sock, i
       output_file << buffer2[i];
       i++;
     }
+    printf("On a mis %d caracteres dans le fichier\n", 1132);
     output_file.close();
   }
   else {
@@ -243,6 +244,9 @@ int main(int argc, char const *argv[])
   interested[4] = id_interested2; 
   send(sock, interested, 5, 0); // mettre le nombre d'octets
   valread = read(sock, buffer, 1024);
+  for (int i = 0; i != valread; ++i)
+    printf("\\x%x", buffer[i]);
+  printf("\n");
   if (valread == 5) {
     if (buffer[3] == '\x01' && buffer[4] == '\x01') {
       std::ofstream	output_file("Les_echecs.epub");

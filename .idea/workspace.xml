@@ -13,18 +13,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8c2eea18-80e1-4a48-a845-df849e867420" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/torrent_client" beforeDir="false" afterPath="$PROJECT_DIR$/bin/torrent_client" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libmylib.a" beforeDir="false" afterPath="$PROJECT_DIR$/libmylib.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PeerManager/peer_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeerManager/peer_manager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PeerManager/peer_manager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeerManager/peer_manager.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subject/.#test_tcp.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/Les_echecs.epub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/subject/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subject/echecs.epub" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/subject/test_tcp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/subject/test_tcp.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +91,8 @@
       <workItem from="1597963872811" duration="9005000" />
       <workItem from="1598027788926" duration="8695000" />
       <workItem from="1598217469852" duration="11970000" />
-      <workItem from="1598259082864" duration="33741000" />
+      <workItem from="1598259082864" duration="33771000" />
+      <workItem from="1598346221969" duration="11559000" />
     </task>
     <servers />
   </component>
@@ -106,10 +104,10 @@
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="98" y="133" width="1724" height="849" key="DiffContextDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1596708753918" />
-    <state x="622" y="256" width="672" height="677" key="run.anything.popup" timestamp="1595639911945">
+    <state x="622" y="256" width="672" height="677" key="run.anything.popup" timestamp="1598351887457">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
-    <state x="622" y="256" width="672" height="677" key="run.anything.popup/0.33.1920.1047@0.33.1920.1047" timestamp="1595639911945" />
+    <state x="622" y="256" width="672" height="677" key="run.anything.popup/0.33.1920.1047@0.33.1920.1047" timestamp="1598351887457" />
     <state x="623" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1598297106304">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>

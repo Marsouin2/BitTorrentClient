@@ -63,27 +63,22 @@ int                           PeerManager::DownloadTheTorrent() // on a trouve l
     (uint32_t&) interested[0] = htonl(1);
     interested[4] = id_interested2;                        // INTERESTED / UNCHOKE
     send(sock, interested, 5, 0); // mettre le nombre d'octets
-
     valread = read(sock, buffer, 1024);
-    printf("unchoke ? %d chars ", valread);
 
+    //valread = recv(sock, &buffer, 1024, 0);
+
+    //printf("%d valread\n", valread);
     for (int i = 0; i != valread; ++i)
         printf("\\x%x", buffer[i]);
     printf("\n");
+
     if (valread == 5) {
         if (buffer[3] == '\x01' && buffer[4] == '\x01') {
             std::ofstream     output_file(this->torrent_final_output_filename);
             for (int i = 0; i != this->number_of_pieces; ++i)
             {
-                SendRequestMessage(output_file, valread, sock, i);
+                this->SendRequestMessage(output_file, valread, sock, i);
             }
-        }
-    } else {
-        while (valread != 5)
-        {
-            send(sock, interested, 5, 0);
-            valread = read(sock, buffer, 1024);
-            printf("unchoke ? %d chars ", valread);
         }
     }
 
@@ -159,7 +154,7 @@ int                        PeerManager::TryBitfieldPieces(std::string peer_ip, s
     if ((s = connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr))) < 0)
     {
         std::cerr << "Connection Failed" << std::endl;
-        std::cout << s << std::endl;
+        //std::cout << s << std::endl;
         return -1;
     }
     std::string handshake = netw.SendHandshakeRequest(info_hash, sock);
@@ -169,10 +164,12 @@ int                        PeerManager::TryBitfieldPieces(std::string peer_ip, s
 
     valread = read(sock, buffer, 1024); // ici on read le bitfield
 
-    printf("handshake answer de %d : ", valread);
+    //printf("handshake answer de %d : ", valread);
     std::string string_buffer = buffer;
     if (valread == 1) { // on a recu que le bitfield en 1 truc (LES ECHECS)
-        return this->DoesThePeerGotAllPieces(string_buffer);
+        int ret_value =  this->DoesThePeerGotAllPieces(string_buffer);
+        close(sock);
+        return ret_value;
     }
 
     return 0;
@@ -245,14 +242,18 @@ void                    PeerManager::GetLastPieceLength()
     this->last_piece_length = this->torrent_total_length - reste;
 }
 
-void                    PeerManager::SendRequestMessage(std::ofstream &output_file, int &valread, int &sock, int &index)
-{
-    if (index - 1 == this->number_of_pieces) // last piece
+void                    PeerManager::SendRequestMessage(std::ofstream &output_file, int &valread, int &sock, int index) {
+    //std::cout << "On check si " << index - 1 << " == " << this->number_of_pieces << std::endl;
+    if (index == this->number_of_pieces - 1) // last piece
+    {
         this->GetLastPieceLength();
+        //printf("Last piece length : %d\n", this->last_piece_length);
+    }
     else if (index == 0)
+    {
         this->GetMaxPieceLength();
-    // get max piece length
-    // get last piece length
+        //printf("Max piece length : %d\n", this->max_piece_length);
+    }
 
     uint32_t length = 13;
     uint8_t id_request = 6;
@@ -268,39 +269,46 @@ void                    PeerManager::SendRequestMessage(std::ofstream &output_fi
     message[4] = id_request;
     (uint32_t&) message[5] = htonl(index);
     (uint32_t&) message[9] = htonl(0);
-    if (index - 1 == this->number_of_pieces)
-        (uint32_t&) message[13] = htonl(this->last_piece_length - 4);
+    if (index == this->number_of_pieces - 1)
+        //(uint32_t&) message[13] = htonl(1128);
+        (uint32_t&) message[13] = htonl(this->last_piece_length);
     else
-        (uint32_t&) message[13] = htonl(this->max_piece_length);
         //(uint32_t&) message[13] = htonl(16383);
+        (uint32_t&) message[13] = htonl(this->max_piece_length);
     send(sock, message, 17, 0);
     sleep(1);
 
-    if (index - 1 == this->number_of_pieces)
+    if (index == this->number_of_pieces - 1)
     {
-        char buffer[this->last_piece_length + 8];
-        //valread = read(sock, buffer2, 1129 + 12);
-        valread = read(sock, buffer, this->last_piece_length + 13);
+      char buffer[this->last_piece_length + 8];
+      //char buffer[1128 + 12];
+      valread = read(sock, buffer, this->last_piece_length + 9);
+      //valread = read(sock, buffer, 1129 + 12);
         int i = 13;
-        while (i != this->last_piece_length + 13)
+        while (i != this->last_piece_length + 9)
+	//while (i != 1141)
         {
             //while (i != 1141) {
             output_file << buffer[i];
             i++;
         }
+        std::cout /*<< this->GetPercentageAdvancment*/ << "Downloading piece #" << index + 1 << " from 1 peer" << std::endl;
         output_file.close();
     }
     else
     {
-        char buffer[this->max_piece_length + 12];
-        //valread = read(sock, buffer1, 16384 + 12);
-        valread = read(sock, buffer, this->max_piece_length + 12);
+        //char buffer[16384 + 12];
+        char buffer[this->max_piece_length + 13];
+        //valread = read(sock, buffer, 16384 + 12);
+        valread = read(sock, buffer, this->max_piece_length + 13);
+        //valread = recv(sock, buffer, this->max_piece_length + 12, 0);
         int i = 13;
+        //while (i != 16397)
         while (i != this->max_piece_length + 14)
-            //while (i != 16397)
         {
             output_file << buffer[i];
             i++;
         }
+        std::cout /*<< this->GetPercentageAdvancment*/ << "Downloading piece #" << index + 1 << " from 1 peer" << std::endl;
     }
 }

@@ -35,7 +35,7 @@ public:
     void                                SetPerfectPeerPort(const int &new_port) { this->perfect_peer_port = new_port; };
     int                                 DownloadTheTorrent();
 
-    void                                SendRequestMessage(std::ofstream &, int &, int &, int &);
+    void                                SendRequestMessage(std::ofstream &, int &, int &, int );
     void                                GetLastPieceLength();
     void                                GetMaxPieceLength();
     std::string                         Handshake();
