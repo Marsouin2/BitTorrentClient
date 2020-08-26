@@ -22,9 +22,10 @@ private:
     int                                         torrent_total_length;
     std::map<std::string, std::string>          peers_list;
     std::pair<std::string, int>                 perfect_peer;
+    std::string                                 output_file_path;
 
 public:
-    ManageTorrentFile(const std::string &torrent_file);
+    ManageTorrentFile(const std::string &torrent_file, const std::string &output_path_file);
     ~ManageTorrentFile() {};
     int                                         OpenAndRead();
     void                                        GetBencode() {};

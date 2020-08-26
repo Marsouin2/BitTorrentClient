@@ -33,7 +33,6 @@ int                                             PeerManager::DownloadTheTorrent(
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(this->perfect_peer_port);
 
-    std::cout << "connect to " << this->perfect_peer_ip << ":" << this->perfect_peer_port << std::endl;
     if (inet_pton(AF_INET, this->perfect_peer_ip.c_str(), &serv_addr.sin_addr) <= 0)
     {
         std::cout << "Invalid address / Adress not supported" << std::endl;
@@ -44,12 +43,10 @@ int                                             PeerManager::DownloadTheTorrent(
         std::cerr << "Connection Failed" << std::endl;
         return -1;
     }
-    std::cout << "Connexion OK" << std::endl;
 
     std::string handshake = this->Handshake();
     send(sock, handshake.c_str(), handshake.length(), 0);       // HANDSHAKE
     valread = read(sock, buffer, 1024);
-    std::cout << "valread 1 = " << valread << std::endl;
 
 
     uint8_t bitfield[8];                                    // BITFIELD
@@ -70,14 +67,7 @@ int                                             PeerManager::DownloadTheTorrent(
     send(sock, interested, 5, 0); // mettre le nombre d'octets
     valread = read(sock, buffer, 1024);
 
-    std::cout << "valread 2 = " << valread << std::endl;
-
-    for (int i = 0; i != valread; ++i)
-        printf("\\x%x", buffer[i]);
-    printf("\n");
-
     if (valread == 5) {
-        std::cout << "valread == 5" << std::endl;
         if (buffer[3] == '\x01' && buffer[4] == '\x01') {
             std::ofstream     output_file(this->torrent_final_output_filename);
             std::cout << "number of pieces : " << this->number_of_pieces << std::endl;
@@ -163,7 +153,6 @@ int                        PeerManager::TryBitfieldPieces(std::string peer_ip, s
         {
             std::cout << "Connexion with peer " << peer_ip << ":" << peer_port << " done !" << std::endl;
             std::string handshake = netw.SendHandshakeRequest(info_hash, sock);
-            std::cout << "1" << std::endl;
             char buffer[1024] = {0};
             int valread = 0;
 
@@ -225,11 +214,13 @@ std::pair<std::string, int> PeerManager::GetPerfectPeer(std::map<std::string, st
     for (std::map<std::string, std::string>::iterator it = peers.begin(); it != peers.end(); ++it) // display peers ip/port
     {
         std::cout << "Try connection to " << it->first << ":" << it->second << std::endl;
-        if (this->TryBitfieldPieces(it->first, it->second, info_hash) == 1)
+        if (it->first != "185.56.20.216" && it->first != "185.157.245.92")
         {
-            this->SetPerfectPeerIp(it->first);
-            this->SetPerfectPeerPort(stoi(it->second));
-            return std::make_pair(it->first, std::stoi(it->second));
+            if (this->TryBitfieldPieces(it->first, it->second, info_hash) == 1) {
+                this->SetPerfectPeerIp(it->first);
+                this->SetPerfectPeerPort(stoi(it->second));
+                return std::make_pair(it->first, std::stoi(it->second));
+            }
         }
     }
     return std::make_pair("null", 0);
@@ -287,13 +278,9 @@ double                  PeerManager::GetPercentageAdvancment(int piece_value)
 void                    PeerManager::SendRequestMessage(std::ofstream &output_file, int &valread, int &sock, int index) {
     //std::cout << "On check si " << index - 1 << " == " << this->number_of_pieces << std::endl;
     if (index == this->number_of_pieces - 1) // last piece
-    {
         this->GetLastPieceLength();
-    }
     else if (index == 0)
-    {
         this->GetMaxPieceLength();
-    }
 
     uint32_t length = 13;
     uint8_t id_request = 6;
@@ -325,7 +312,7 @@ void                    PeerManager::SendRequestMessage(std::ofstream &output_fi
       valread = read(sock, buffer, this->last_piece_length + 9);
       //valread = read(sock, buffer, 1129 + 12);
         int i = 13;
-        while (i != this->last_piece_length + 9)
+        while (i != this->last_piece_length + 9) // 13 || 9
 	    //while (i != 1141)
         {
             output_file << buffer[i];

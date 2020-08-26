@@ -13,19 +13,21 @@
   <component name="ChangeListManager">
     <list default="true" id="8c2eea18-80e1-4a48-a845-df849e867420" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/Networking/network.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/Networking/network.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/PeerManager/peer_manager.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/TorrentManager/manage_torrent_file.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mylib.dir/src/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/Networking/network.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/PeerManager/peer_manager.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/TorrentManager/manage_torrent_file.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/torrent_client.dir/src/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/torrent_client" beforeDir="false" afterPath="$PROJECT_DIR$/bin/torrent_client" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libmylib.a" beforeDir="false" afterPath="$PROJECT_DIR$/libmylib.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Networking/network.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Networking/network.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PeerManager/peer_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeerManager/peer_manager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PeerManager/peer_manager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeerManager/peer_manager.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subject/internet1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/subject/internet1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TorrentManager/manage_torrent_file.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +97,8 @@
       <workItem from="1598027788926" duration="8695000" />
       <workItem from="1598217469852" duration="11970000" />
       <workItem from="1598259082864" duration="33771000" />
-      <workItem from="1598346221969" duration="32899000" />
+      <workItem from="1598346221969" duration="35913000" />
+      <workItem from="1598439170644" duration="5149000" />
     </task>
     <servers />
   </component>

@@ -1,9 +1,7 @@
 #include "network.hpp"
 
 Network::Network(const std::string &url_request) {
-    std::cout << "on send : " << url_request << std::endl;
     const std::string tracker_peer_bencode = this->Send(url_request);
-    std::cout << "peers_ip" << std::endl;
     this->GetPeersIps(tracker_peer_bencode); // get the peers ips
     /*if (this->CreateTcpConnection("81.141.90.197", 51413) != -1) {
         this->ConstituteHandshake();
@@ -32,7 +30,7 @@ const std::string         Network::Send(const std::string &message) { // send a 
         res = curl_easy_perform(curl); // Perform the request, res will get the return code
 
         curl_easy_cleanup(curl); // always cleanup
-        std::cout << "tracker answering : " << reading_buffer << std::endl;
+        //std::cout << "tracker answering : " << reading_buffer << std::endl;
         return (reading_buffer);
     }
     std::cout << "error" << std::endl;
@@ -233,13 +231,11 @@ void                                    Network::GetTrackerIps(const std::string
         }
         which_octet_number++;
     }
-    std::cout << "liste des ip:port :" << std::endl;
-    for (std::map<std::string, std::string>::iterator it = this->decimal_peers_ips.begin(); it != this->decimal_peers_ips.end(); ++it) // display peers ip/port
-    {
+    //std::cout << "liste des ip:port :" << std::endl;
+    /*for (std::map<std::string, std::string>::iterator it = this->decimal_peers_ips.begin(); it != this->decimal_peers_ips.end(); ++it) // display peers ip/port
         std::cout << it->first << ":" << it->second << std::endl;
-    }
     std::cout << std::endl;
-    std::cout << std::endl;
+    std::cout << std::endl;*/
 }
 
 void                        Network::GetPeersIps(const std::string &tracker_bencode) // get the tracker response, decode bencode to get peers ip

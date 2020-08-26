@@ -1,7 +1,9 @@
 #include "manage_torrent_file.hpp"
 
-ManageTorrentFile::ManageTorrentFile(const std::string &torrent_file) {
-    this->torrent_filename = torrent_file;
+ManageTorrentFile::ManageTorrentFile(const std::string &torrent_file, const std::string &output_path_file) : torrent_filename { torrent_file },
+                                                                                                             output_file_path { output_path_file }
+{
+    //this->torrent_filename = torrent_file;
     this->OpenAndRead(); // open and read the .torrent file
     this->GetDecodedBencode(); // we got all the informations we needed to handshake
 
@@ -15,12 +17,15 @@ void                                            ManageTorrentFile::ConnectToTrac
 
     const std::map<std::string, std::string>    peer_list = netw.GetPeersList();
     this->SetPeersList(peer_list);
+    std::cout << "We've found " << this->peers_list.size() << " seeders." << std::endl;
 }
 
 void                                            ManageTorrentFile::GetThePerfectPeer() // call <PeerManager> that will make requests to get bitfields
 {
+    const std::string                           filepath_with_filename = this->output_file_path + '/' + this->torrent_final_output_filename;
+
     PeerManager                                 peer_manager(this->piece_length, this->torrent_total_length,
-                                                             this->torrent_final_output_filename, this->torrent_hex_info_hash);
+                                                             filepath_with_filename, this->torrent_hex_info_hash);
 
     this->perfect_peer = peer_manager.GetPerfectPeer(this->peers_list, this->torrent_hex_info_hash); // returns the peer with all pieces <ip><port>
     if (this->perfect_peer.first != "null") // ("null", 0) or ("ip", port)
