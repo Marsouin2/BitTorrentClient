@@ -117,6 +117,8 @@ void                        ManageTorrentFile::GetDecodedBencode() { // split th
     this->torrent_total_length = bencode_parser.GetTorrentLength();
     this->torrent_final_output_filename = bencode_parser.GetTorrentName();
 
+    std::cout << "Starting to download for " << this->torrent_final_output_filename << std::endl;
+
     // 6a41e2a67b7f9015d3fb2309dbbd2fa0e20543ac
 
     //this->ConstituteHexFinalHash(torrent_info_hash); // constitute the info_hash(\x21\xsf...) pour le handashak

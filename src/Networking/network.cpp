@@ -215,7 +215,7 @@ void                                    Network::GetTrackerIps(const std::string
         int                             i = tempo_peers_ips;
 
         if (which_octet_number == 3) {
-            tempo_constitute_ip = tempo_constitute_ip + std::to_string(i) + ':';
+            tempo_constitute_ip = tempo_constitute_ip + std::to_string(i);
         }
         else if (which_octet_number == 4) { // on store le port
             tempo_constitute_port = i;
@@ -238,6 +238,8 @@ void                                    Network::GetTrackerIps(const std::string
     {
         std::cout << it->first << ":" << it->second << std::endl;
     }
+    std::cout << std::endl;
+    std::cout << std::endl;
 }
 
 void                        Network::GetPeersIps(const std::string &tracker_bencode) // get the tracker response, decode bencode to get peers ip

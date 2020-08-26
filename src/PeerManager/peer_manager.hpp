@@ -11,6 +11,18 @@
 #include <string>
 #include <utility>
 
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/tcp.h>
+#include <arpa/inet.h>
+#include <utility>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+
 class                                   PeerManager // class qui va recevoir tous les peer (ip:port) et qui va determiner auxquels envoyer les requetes
 {
 private:
